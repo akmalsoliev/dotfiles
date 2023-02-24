@@ -66,4 +66,18 @@ return require('packer').startup(function(use)
 
   -- pep8 indentation for python
   use('Vimjas/vim-python-pep8-indent')
+
+  -- Noice
+  use({
+    "folke/noice.nvim",
+    config = function()
+      require("noice").setup({
+        -- add any options here
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+    }
+  })
+
 end)

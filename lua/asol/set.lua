@@ -24,3 +24,6 @@ vim.g.mapleader = ' '
 
 -- Setting fish as default shell
 vim.opt.shell = "/opt/homebrew/bin/fish"
+
+-- Removing case sensitivity
+vim.opt.ignorecase = true

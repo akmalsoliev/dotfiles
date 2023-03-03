@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>n", vim.cmd.BufferLineCycleNext)
 vim.keymap.set("n", "<leader>p", vim.cmd.BufferLineCyclePrev)
 vim.keymap.set("n", "<leader>b", vim.cmd.BufferLinePick)
--- Closes the current buffer and moves to the previos
+-- Closes the current buffer and moves to the previews
 vim.keymap.set("n", "<leader>q", ":w<C-U>bprevious<bar> bdelete #<CR>")
 
 -- Fugitive remap 
@@ -39,3 +39,8 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Run the code
 vim.keymap.set("n", "<leader>r", ":w | !%<CR>", { silent = true })
+
+-- Spell check on
+vim.keymap.set("n", "<leader>sp", ":set spell<CR>", { silent = true })
+-- Word suggestion
+vim.keymap.set("n", "<leader>sg", "z=", { silent = true })

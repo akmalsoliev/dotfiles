@@ -72,7 +72,6 @@ return require('packer').startup(function(use)
     "folke/noice.nvim",
     config = function()
       require("noice").setup({
-        -- add any options here
       })
     end,
     requires = {

@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
--- File explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-
 -- Bufferline shortcuts
 vim.keymap.set("n", "<leader>n", vim.cmd.BufferLineCycleNext)
 vim.keymap.set("n", "<leader>p", vim.cmd.BufferLineCyclePrev)
@@ -44,3 +41,6 @@ vim.keymap.set("n", "<leader>r", ":w | !%<CR>", { silent = true })
 vim.keymap.set("n", "<leader>sp", ":set spell<CR>", { silent = true })
 -- Word suggestion
 vim.keymap.set("n", "<leader>sg", "z=", { silent = true })
+
+-- nvim-tree toggle
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")

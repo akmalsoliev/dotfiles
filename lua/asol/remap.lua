@@ -19,7 +19,7 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Preserve the paste
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>P", [["_dP]])
 
 -- Save to buffer 
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])

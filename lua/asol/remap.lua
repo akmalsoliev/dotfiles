@@ -44,3 +44,6 @@ vim.keymap.set("n", "<leader>sg", "z=", { silent = true })
 
 -- nvim-tree toggle
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+-- remapping escape
+vim.keymap.set("n", "<C-c>", "Esc")

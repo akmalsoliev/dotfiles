@@ -12,7 +12,7 @@ alias ls='lsd -Fl'
 alias la='lsd -Fla'
 alias lt='lsd --tree'
 # cli aliases
-alias cl='clear'
+alias clr='clear'
 # git aliases
 alias gs='git status'
 alias ga='git add'

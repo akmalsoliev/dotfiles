@@ -27,3 +27,6 @@ vim.opt.shell = "/opt/homebrew/bin/fish"
 
 -- Removing case sensitivity
 vim.opt.ignorecase = true
+
+-- Break line after 80 characters
+vim.opt.tw=79

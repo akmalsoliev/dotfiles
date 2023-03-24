@@ -210,6 +210,11 @@ _G.packer_plugins = {
     path = "/Users/akmalsoliev/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/Users/akmalsoliev/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
+  },
   ["vim-python-pep8-indent"] = {
     loaded = true,
     path = "/Users/akmalsoliev/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",

@@ -88,4 +88,7 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
+  -- Git Gutter
+  use 'airblade/vim-gitgutter'
+
 end)

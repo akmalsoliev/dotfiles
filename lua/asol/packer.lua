@@ -91,4 +91,10 @@ return require('packer').startup(function(use)
   -- Git Gutter
   use 'airblade/vim-gitgutter'
 
+  -- Status bar enhancements
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
 end)

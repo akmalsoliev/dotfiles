@@ -13,3 +13,16 @@ require("bufferline").setup({
     },
     highlights = highlights,
 })
+
+-- Lualine addition
+require("lualine").setup({
+    theme = 'nord',
+})
+
+-- nord setup
+vim.g.nord_contrast = true
+vim.g.nord_disable_background = true
+vim.g.nord_bold = false
+
+--Lua:
+vim.cmd[[colorscheme nord]]

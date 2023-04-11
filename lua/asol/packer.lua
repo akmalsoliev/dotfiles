@@ -13,16 +13,6 @@ return require('packer').startup(function(use)
   -- Bufferline, for tabs
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
-  -- File explorer
-  -- NOTE: Implement this further down the line, right now a bit lazy
-  --use {
-  --    'nvim-tree/nvim-tree.lua',
-  --    requires = {
-  --        'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  --    },
-  --    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  --}
-
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
 	  requires = { {'nvim-lua/plenary.nvim'} }
@@ -32,8 +22,18 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/playground')
   use('mbbill/undotree')
 
+  -- // Git Tools // --
   -- Git assistance
   use('tpope/vim-fugitive')
+  -- Git Gutter
+  use 'airblade/vim-gitgutter'
+  -- Gitignore generator
+  use({
+    "wintermute-cell/gitignore.nvim",
+    requires = {
+      "nvim-telescope/telescope.nvim"
+    }
+  })
 
   -- LSP
   use {
@@ -88,8 +88,17 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-  -- Git Gutter
-  use 'airblade/vim-gitgutter'
+  -- navbuddy
+  use {
+    "SmiteshP/nvim-navbuddy",
+    requires = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+      "numToStr/Comment.nvim",        -- Optional
+      "nvim-telescope/telescope.nvim" -- Optional
+    }
+  }
 
   -- Status bar enhancements
   use {

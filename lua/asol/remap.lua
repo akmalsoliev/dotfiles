@@ -47,3 +47,6 @@ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- remapping escape
 vim.keymap.set("n", "<C-c>", "Esc")
+
+-- aerial toggle
+vim.keymap.set('n', '<leader>a', ':AerialToggle<CR>')

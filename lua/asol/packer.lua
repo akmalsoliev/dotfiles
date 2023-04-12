@@ -88,16 +88,9 @@ return require('packer').startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
-  -- navbuddy
+  -- aerial; code explorer
   use {
-    "SmiteshP/nvim-navbuddy",
-    requires = {
-      "neovim/nvim-lspconfig",
-      "SmiteshP/nvim-navic",
-      "MunifTanjim/nui.nvim",
-      "numToStr/Comment.nvim",        -- Optional
-      "nvim-telescope/telescope.nvim" -- Optional
-    }
+    'stevearc/aerial.nvim',
   }
 
   -- Status bar enhancements

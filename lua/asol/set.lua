@@ -30,3 +30,6 @@ vim.opt.ignorecase = true
 
 -- Break line after 80 characters
 vim.opt.tw=79
+
+-- New addition in Neovim 9 splitting the buffer on screen
+vim.opt.spk="cursor"

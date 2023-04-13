@@ -5,7 +5,6 @@ lsp.preset('recommended')
 lsp.ensure_installed({
   'lua_ls',
   'pyright',
-  'pyre',
   'bashls',
   'docker_compose_language_service',
   'dockerls',

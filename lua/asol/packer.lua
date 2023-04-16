@@ -61,9 +61,6 @@ return require('packer').startup(function(use)
 
   use('nvim-lua/completion-nvim')
 
-  -- Bracket pairs
-  use('jiangmiao/auto-pairs')
-
   -- pep8 indentation for python
   use('Vimjas/vim-python-pep8-indent')
 

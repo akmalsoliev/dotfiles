@@ -7,12 +7,21 @@ local highlights = require("nord").bufferline.highlights({
     fill = "#181c24"
 })
 
-require("bufferline").setup({
-    options = {
+require("bufferline").setup{
+    options={
+        diagnostics = "nvim_lsp",
+        color_icons = true,
         separator_style = "slant",
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            highlight = "Directory"
+          }
+        },
     },
     highlights = highlights,
-})
+}
 
 -- Lualine addition
 require("lualine").setup({

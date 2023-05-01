@@ -20,6 +20,8 @@ alias gc='git commit'
 # Neovim aliase
 alias vim='nvim'
 alias ovim='nvim .'
+# upgrading all outdated pip packages
+alias pipup="pip freeze -o | sed 's/=.*//' | xargs pip install --upgrade"
 
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes

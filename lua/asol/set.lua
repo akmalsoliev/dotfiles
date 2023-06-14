@@ -33,3 +33,6 @@ vim.opt.tw=79
 
 -- New addition in Neovim 9 splitting the buffer on screen
 vim.opt.spk="cursor"
+
+-- Set max height
+vim.opt.pumheight = 10

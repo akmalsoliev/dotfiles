@@ -4,8 +4,7 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   'lua_ls',
-  'ruff_lsp',
-  'jedi_language_server',
+  'pyright',
   'dockerls',
 })
 

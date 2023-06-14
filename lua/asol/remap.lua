@@ -32,10 +32,9 @@ vim.keymap.set("n", ";", ":")
 vim.keymap.set("n", "<leader>c", ":noh<CR>", { silent = true })
 
 -- Make file executable 
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %:p<CR>", { silent = true })
 -- Run the code
-vim.keymap.set("n", "<leader>r", ":w | !%<CR>", { silent = true })
+vim.keymap.set("n", "<leader>r", ":w |!%:p<CR>", { silent = true })
 
 -- Spell check on
 vim.keymap.set("n", "<leader>sp", ":set spell<CR>", { silent = true })

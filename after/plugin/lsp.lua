@@ -4,15 +4,13 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
   'lua_ls',
-  'pyright',
-  'bashls',
-  'docker_compose_language_service',
+  'ruff_lsp',
+  'jedi_language_server',
   'dockerls',
-  'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua-language-server', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -34,11 +32,34 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp_mappings['<CR>'] = nil
 
 lsp.setup_nvim_cmp({
+  sources = {
+    {name = 'nvim_lsp'},
+  },
   mapping = cmp_mappings,
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  }
+    documentation = {
+      max_height = 15,
+      max_width = 40,
+    }
+  },
+  formatting = {
+    fields = {'abbr', 'menu', 'kind'},
+    format = function(entry, item)
+      local short_name = {
+        nvim_lsp = 'LSP',
+        nvim_lua = 'nvim'
+      }
+
+      local menu_name = short_name[entry.source.name] or entry.source.name
+
+      item.menu = string.format('[%s]', menu_name)
+      return item
+    end}
 })
 
 lsp.on_attach(function(client, bufnr)

@@ -7,9 +7,6 @@ vim.keymap.set("n", "<leader>b", vim.cmd.BufferLinePick)
 -- Closes the current buffer and moves to the previews
 vim.keymap.set("n", "<leader>q", ":w<C-U>bprevious<bar> bdelete #<CR>")
 
--- Fugitive remap 
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
-
 -- Line movement, in view mode only!
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

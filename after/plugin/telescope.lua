@@ -11,7 +11,9 @@ require("telescope").setup({
 	defaults = {
 		mappings = {
 			i = {
-				["<esc>"] = actions.close,
+        ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+        ["<Tab>"] = actions.toggle_selection + actions.move_selection_better,
+        ["<esc>"] = actions.close,
 			},
 		},
 	},

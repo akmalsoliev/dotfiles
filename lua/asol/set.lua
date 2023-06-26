@@ -18,7 +18,7 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "79"
+vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = ' '
 
@@ -29,10 +29,13 @@ vim.opt.shell = "/opt/homebrew/bin/fish"
 vim.opt.ignorecase = true
 
 -- Break line after 80 characters
-vim.opt.tw=79
+vim.opt.tw = 80
 
 -- New addition in Neovim 9 splitting the buffer on screen
-vim.opt.spk="cursor"
+vim.opt.spk = "cursor"
 
 -- Set max height
 vim.opt.pumheight = 10
+
+-- invisible cmd line
+vim.opt.cmdheight=0

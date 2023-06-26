@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
       "nvim-telescope/telescope.nvim"
     }
   })
+  -- Git diff tool
+  use("sindrets/diffview.nvim")
 
   -- LSP
   use {

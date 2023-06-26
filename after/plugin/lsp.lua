@@ -6,6 +6,10 @@ lsp.ensure_installed({
   'lua_ls',
   'pyright',
   'dockerls',
+  'rust_analyzer',
+  'taplo',
+  'yamlls',
+  'jsonls',
 })
 
 -- Fix Undefined global 'vim'
@@ -17,6 +21,38 @@ lsp.configure('lua_ls', {
             }
         }
     }
+})
+
+-- Rust
+local on_attach = {
+  function(client)
+    require'completion'.on_attach(client)
+  end
+}
+
+lsp.configure('rust_analyzer', {
+  on_attach=on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
+      procMacro = {
+        enable = true
+      },
+      add_return_type = {
+        enable = true
+      },
+    }
+  }
 })
 
 local cmp = require('cmp')

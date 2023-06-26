@@ -11,7 +11,7 @@ require("bufferline").setup{
     options={
         diagnostics = "nvim_lsp",
         color_icons = true,
-        separator_style = "slant",
+        separator_style = "thin",
         offsets = {
           {
             filetype = "NvimTree",

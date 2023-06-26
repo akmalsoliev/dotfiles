@@ -1,5 +1,3 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
@@ -13,9 +11,10 @@ return require('packer').startup(function(use)
   -- Bufferline, for tabs
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 
+  -- telescope
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
@@ -23,10 +22,6 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
 
   -- // Git Tools // --
-  -- Git assistance
-  use('tpope/vim-fugitive')
-  -- Git Gutter
-  use 'airblade/vim-gitgutter'
   -- Gitignore generator
   use({
     "wintermute-cell/gitignore.nvim",
@@ -37,40 +32,38 @@ return require('packer').startup(function(use)
 
   -- LSP
   use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/mason.nvim'},
+      {'williamboman/mason-lspconfig.nvim'},
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
 
-		  -- Snippets
-		  {'L3MON4D3/LuaSnip'},
-		  {'rafamadriz/friendly-snippets'},
-	  }
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
   }
-
-  use('nvim-lua/completion-nvim')
 
   -- pep8 indentation for python
   use('Vimjas/vim-python-pep8-indent')
+  -- bracket close
+  use 'm4xshen/autoclose.nvim'
+  -- indent backline
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Noice
   use({
     "folke/noice.nvim",
-    config = function()
-      require("noice").setup({
-      })
-    end,
     requires = {
       "MunifTanjim/nui.nvim",
     }
@@ -86,9 +79,7 @@ return require('packer').startup(function(use)
   }
 
   -- aerial; code explorer
-  use {
-    'stevearc/aerial.nvim',
-  }
+  use ('stevearc/aerial.nvim')
 
   -- Status bar enhancements
   use {

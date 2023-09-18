@@ -89,4 +89,28 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
+  -- Rust plugins
+  use {
+    'saecki/crates.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup()
+    end,
+  }
+
+  use {
+    'rust-lang/rust.vim',
+    ft = "rust",
+    config = function()
+        vim.g.rustfmt_autosave = 1
+    end,
+  }
+
+  use ({
+    'ggandor/leap.nvim',
+    config = function()
+      require("leap").add_default_mappings()
+    end
+  })
+
 end)

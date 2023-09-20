@@ -62,13 +62,15 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
   ['<C-Space>'] = cmp.mapping.complete(),
+  ['<CR>'] = nil
 })
-
-cmp_mappings['<CR>'] = nil
 
 lsp.setup_nvim_cmp({
   sources = {
-    {name = 'nvim_lsp'},
+    { name = "path" },
+    { name = "buffer" },
+    { name = "nvim_lsp" },
+    { name = "crates" },
   },
   mapping = cmp_mappings,
   snippet = {

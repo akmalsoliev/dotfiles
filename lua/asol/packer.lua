@@ -92,12 +92,13 @@ return require('packer').startup(function(use)
   -- Rust plugins
   use {
     'saecki/crates.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    tag = 'v0.3.0',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('crates').setup()
     end,
   }
-
+  
   use {
     'rust-lang/rust.vim',
     ft = "rust",

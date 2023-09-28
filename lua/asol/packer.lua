@@ -62,6 +62,13 @@ return require('packer').startup(function(use)
   use 'm4xshen/autoclose.nvim'
   -- indent backline
   use "lukas-reineke/indent-blankline.nvim"
+  -- commenting plugin
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 
   -- Noice
   use({
@@ -98,7 +105,7 @@ return require('packer').startup(function(use)
       require('crates').setup()
     end,
   }
-  
+ 
   use {
     'rust-lang/rust.vim',
     ft = "rust",

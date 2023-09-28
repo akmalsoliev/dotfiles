@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero')
+local lsp_config = require('lspconfig')
 
 lsp.preset('recommended')
 
@@ -13,7 +14,7 @@ lsp.ensure_installed({
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('lua_ls', {
+lsp_config.lua_ls.setup({
     settings = {
         Lua = {
             diagnostics = {
@@ -24,35 +25,30 @@ lsp.configure('lua_ls', {
 })
 
 -- Rust
-local on_attach = {
-  function(client)
+local on_attach = function(client)
     require'completion'.on_attach(client)
-  end
-}
+end
 
-lsp.configure('rust_analyzer', {
-  on_attach=on_attach,
-  settings = {
-    ["rust-analyzer"] = {
-      imports = {
-        granularity = {
-          group = "module",
-        },
-        prefix = "self",
-      },
-      cargo = {
-        buildScripts = {
-          enable = true,
-        },
-      },
-      procMacro = {
-        enable = true
-      },
-      add_return_type = {
-        enable = true
-      },
+lsp_config.rust_analyzer.setup({
+    on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
     }
-  }
 })
 
 local cmp = require('cmp')
@@ -67,10 +63,8 @@ cmp_mappings['<CR>'] = nil
 
 lsp.setup_nvim_cmp({
   sources = {
-    { name = "path" },
-    { name = "buffer" },
     { name = "nvim_lsp" },
-    { name = "crates" },
+    { name = "crates", priority=100, },
   },
   mapping = cmp_mappings,
   snippet = {

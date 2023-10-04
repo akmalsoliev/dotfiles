@@ -13,17 +13,6 @@ lsp.ensure_installed({
   'jsonls',
 })
 
--- Fix Undefined global 'vim'
-lsp_config.lua_ls.setup({
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
-
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -85,7 +74,7 @@ rt.setup({
   },
   server = {
     on_attach = function(_, bufnr)
-      local opts = {buffer = bufnr, remap = true}
+      local opts = {buffer = bufnr, remap = false}
       vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
       vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
       vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -103,7 +92,20 @@ rt.setup({
 
 rt.inlay_hints.enable()
 
+-- Fix Undefined global 'vim'
+lsp_config.lua_ls.setup({
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+})
+
 lsp.setup()
+
+require("leap").add_default_mappings()
 
 vim.diagnostic.config({
     virtual_text = true

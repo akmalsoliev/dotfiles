@@ -1,4 +1,4 @@
 require("asol.remap")
-require("asol.packer")
+require("asol.lazy")
 require("asol.set")
 require("asol.commands")

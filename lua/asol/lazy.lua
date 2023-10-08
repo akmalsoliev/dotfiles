@@ -12,8 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  'wbthomason/packer.nvim',
-
   -- Colorscheme as Nord-Vim 
   'shaunsingh/nord.nvim',
 
@@ -25,12 +23,15 @@ local plugins = {
 
   -- Telescope
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim',
     dependencies = { {'nvim-lua/plenary.nvim'} }
   },
 
   -- Treesitter
-  {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
   'nvim-treesitter/playground',
   'mbbill/undotree',
 
@@ -51,21 +52,21 @@ local plugins = {
     branch = 'v1.x',
     dependencies = {
       -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+      'neovim/nvim-lspconfig',
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
+      'hrsh7th/nvim-cmp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lua',
 
       -- Snippets
-      {'L3MON4D3/LuaSnip'},
-      {'rafamadriz/friendly-snippets'},
+      'L3MON4D3/LuaSnip',
+      'rafamadriz/friendly-snippets',
     }
   },
 
@@ -114,8 +115,6 @@ local plugins = {
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
 
-  'simrat39/rust-tools.nvim',
-
   {
     'rust-lang/rust.vim',
     ft = "rust",
@@ -124,7 +123,9 @@ local plugins = {
     end,
   },
 
-  'ggandor/leap.nvim',
+  {
+    'ggandor/leap.nvim',
+  }
 
 }
 

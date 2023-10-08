@@ -3,15 +3,8 @@ local lsp_config = require('lspconfig')
 
 lsp.preset('recommended')
 
-lsp.ensure_installed({
-  'lua_ls',
-  'pyright',
-  'dockerls',
-  'rust_analyzer',
-  'taplo',
-  'yamlls',
-  'jsonls',
-})
+local install_languages = require('lsp_set.install_languages')
+lsp.ensure_installed(install_languages)
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
@@ -24,89 +17,40 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp_mappings['<CR>'] = nil
 
 -- Rust 
-local rt = require("rust-tools")
+local on_attach = function(client)
+    require'completion'.on_attach(client)
+end
 
-rt.setup({
-  tools = {
-    inlay_hints = {
-      auto = true,
-      only_current_line = false,
-      show_parameter_hints = true,
-      parameter_hints_prefix = "<- ",
-      other_hints_prefix = "=> ",
-      max_len_align = false,
-      max_len_align_padding = 1,
-      right_align = false,
-      right_align_padding = 7,
-      highlight = "Comment",
-    },
-  },
-  server = {
-    on_attach = function(_, bufnr)
-      local opts = {buffer = bufnr, remap = false}
-      vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-      vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-      vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-      vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-      vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
-      vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-      vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-      vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-      vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-      vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
-      vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.document_highlight() end, opts)
-    end,
-  },
+local rust_set = require('lsp_set.rust_set')
+lsp_config.rust_analyzer.setup({
+    on_attach=on_attach,
+    settings = rust_set
 })
-rt.inlay_hints.enable()
 
-lsp.setup_nvim_cmp({
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "crates", priority=100, },
-  },
-  mapping = cmp_mappings,
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  window = {
-    documentation = {
-      max_height = 15,
-      max_width = 40,
-    }
-  },
-  formatting = {
-    fields = {'abbr', 'menu', 'kind'},
-    format = function(entry, item)
-      local short_name = {
-        nvim_lsp = 'LSP',
-        nvim_lua = 'nvim'
-      }
+-- Keymaps
+lsp.on_attach(function(_, bufnr)
+  local opts = {buffer = bufnr, remap = false}
+  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
+  vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+  vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+  vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+  vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+  vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.document_highlight() end, opts)
+end)
 
-      local menu_name = short_name[entry.source.name] or entry.source.name
-
-      item.menu = string.format('[%s]', menu_name)
-      return item
-    end}
-})
+local cmp_set = require('lsp_set.cmp_set')
+lsp.setup_nvim_cmp(cmp_set)
 
 -- Fix Undefined global 'vim'
-lsp_config.lua_ls.setup({
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
-    }
-})
+local lua_set = require('lsp_set.lua_set')
+lsp_config.lua_ls.setup(lua_set)
 
 lsp.setup()
-
-require("leap").add_default_mappings()
-require('crates').setup()
 
 vim.diagnostic.config({
     virtual_text = true

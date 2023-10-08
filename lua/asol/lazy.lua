@@ -113,6 +113,9 @@ local plugins = {
   {
     'saecki/crates.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup()
+    end
   },
 
   {
@@ -125,6 +128,9 @@ local plugins = {
 
   {
     'ggandor/leap.nvim',
+    config = function()
+      require("leap").add_default_mappings()
+    end
   }
 
 }

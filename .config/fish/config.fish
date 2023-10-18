@@ -11,6 +11,7 @@ export PATH="/Users/akmalsoliev/.local/bin:$PATH"
 alias ls='lsd -Fl'
 alias la='lsd -Fla'
 alias lt='lsd --tree'
+alias l1='lsd -1'
 # cli aliases
 alias clr='clear'
 # git aliases
@@ -21,7 +22,12 @@ alias gc='git commit'
 alias vim='nvim'
 alias ovim='nvim .'
 # upgrading all outdated pip packages
-alias pipup="pip freeze -o | sed 's/=.*//' | xargs pip install --upgrade"
+alias pipup="pip freeze | sed 's/=.*//' | xargs pip install --upgrade"
+# glow default theme
+alias glow="glow -s /Users/akmalsoliev/Library/Preferences/glow/nord.json"
+
+# docker-compose alias
+alias dco="docker-compose"
 
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes

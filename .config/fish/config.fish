@@ -29,6 +29,11 @@ alias glow="glow -s /Users/akmalsoliev/Library/Preferences/glow/nord.json"
 # docker-compose alias
 alias dco="docker-compose"
 
+# Cargo aliases
+alias cr="cargo run"
+alias ca="cargo add"
+alias cc="cargo check"
+
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
 
@@ -43,3 +48,6 @@ function fish_right_prompt
  end
 
 end
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+

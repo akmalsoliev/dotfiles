@@ -119,20 +119,22 @@ local plugins = {
   },
 
   {
-    'rust-lang/rust.vim',
-    ft = "rust",
-    config = function()
-        vim.g.rustfmt_autosave = 1
-    end,
-  },
-
-  {
     'ggandor/leap.nvim',
     config = function()
       require("leap").add_default_mappings()
     end
-  }
+  },
 
+  -- Highlights TODO, FIXME and etc...
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
 }
 
 local opts = {}

@@ -156,7 +156,18 @@ local plugins = {
       'RainbowMultiDelim',
       'RainbowAlign',
     }
-  }
+  },
+
+  -- FTerm
+  {
+    'numToStr/FTerm.nvim',
+    border = 'double',
+    dimensions  = {
+        height = 0.9,
+        width = 0.9,
+    },
+  },
+
 }
 
 local opts = {}

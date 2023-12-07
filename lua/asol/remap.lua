@@ -46,3 +46,7 @@ vim.keymap.set({}, "<C-c>", "Esc")
 
 -- aerial toggle
 vim.keymap.set('n', '<leader>a', ':AerialToggle<CR>')
+
+-- FTerm keybinding terminal
+vim.keymap.set('n', '<C-N>', '<CMD>lua require("FTerm").toggle()<CR>')
+vim.keymap.set('t', '<C-N>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')

@@ -3,9 +3,11 @@ local lsp_config = require('lspconfig')
 
 lsp.preset('recommended')
 
+-- Languages
 local install_languages = require('lsp_set.install_languages')
 lsp.ensure_installed(install_languages)
 
+-- CMP
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -15,6 +17,13 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-Space>'] = cmp.mapping.complete(),
 })
 cmp_mappings['<CR>'] = nil
+
+-- Fix vim script autocompletion
+cmp.setup {
+  sources = {
+    { name = 'nvim_lua' }
+  }
+}
 
 -- Should fix cmp completion size issue
 local ELLIPSIS_CHAR = '…'
@@ -59,6 +68,7 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
   vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.document_highlight() end, opts)
+
 end)
 
 local cmp_set = require('lsp_set.cmp_set')

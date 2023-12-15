@@ -23,6 +23,8 @@ alias vim='nvim'
 alias ovim='nvim .'
 # upgrading all outdated pip packages
 alias pipup="pip freeze | sed 's/=.*//' | xargs pip install --upgrade"
+# uninstall all pip 
+alias pipuninstall="pip freeze | sed 's/=.*//' | xargs pip uninstall -y"
 # glow default theme
 alias glow="glow -s /Users/akmalsoliev/Library/Preferences/glow/nord.json"
 

@@ -18,6 +18,7 @@ alias clr='clear'
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
+alias gd='git diff'
 # Neovim aliase
 alias vim='nvim'
 alias ovim='nvim .'

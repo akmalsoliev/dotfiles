@@ -14,14 +14,21 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ['<C-Space>'] = cmp.mapping.complete(),
+  ['<esc>'] = cmp.mapping.close(),
+  ['<C-h>'] = cmp.mapping.complete(),
+  ['<C-f>'] = cmp.mapping.scroll_docs(4),
+  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+  ['<CR'] = nil,
 })
-cmp_mappings['<CR>'] = nil
 
 -- Fix vim script autocompletion
 cmp.setup {
   sources = {
-    { name = 'nvim_lua' }
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'path' },
   }
 }
 
@@ -54,6 +61,26 @@ lsp_config.rust_analyzer.setup({
     settings = rust_set
 })
 
+-- Python
+require('lspconfig').ruff_lsp.setup {
+}
+
+require('lspconfig').pyright.setup {
+  on_attach = on_attach,
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+}
+
 -- Keymaps
 lsp.on_attach(function(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
@@ -66,9 +93,8 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-  vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
+  vim.keymap.set({"n", "i"}, "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
   vim.keymap.set("n", "<C-H>", function() vim.lsp.buf.document_highlight() end, opts)
-
 end)
 
 local cmp_set = require('lsp_set.cmp_set')

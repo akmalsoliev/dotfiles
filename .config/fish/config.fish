@@ -1,11 +1,23 @@
 if status is-interactive
 
+# Activate venv
+function sv
+    source venv/bin/activate.fish \\
+    and tmux set-environment VIRTUAL_ENV $VIRTUAL_ENV
+end
+if test -n "$VIRTUAL_ENV"
+    source $VIRTUAL_ENV/bin/activate.fish
+end
+
+# iterm integration
+source ~/.iterm2_shell_integration.fish
+
 if status is-interactive
 and not set -q TMUX
     exec tmux
 end
 
-export PATH="/Users/akmalsoliev/.local/bin:$PATH"
+export PATH="/Users/$USER/.local/bin:$PATH"
 
 # lsd aliases
 alias ls='lsd -Fl'
@@ -53,4 +65,3 @@ function fish_right_prompt
 end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-

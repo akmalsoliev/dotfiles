@@ -4,6 +4,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>n", vim.cmd.BufferLineCycleNext)
 vim.keymap.set("n", "<leader>p", vim.cmd.BufferLineCyclePrev)
 vim.keymap.set("n", "<leader>b", vim.cmd.BufferLinePick)
+--
+-- Depreciated, using Sayonara now
 -- Closes the current buffer and moves to the previews
 vim.keymap.set("n", "<leader>q", ":w<C-U>bprevious<bar> bdelete #<CR>")
 
@@ -42,7 +44,7 @@ vim.keymap.set("n", "<leader>sg", "z=", { silent = true })
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- remapping escape
-vim.keymap.set({}, "<C-c>", "Esc")
+vim.keymap.set({"i", "c", "v", "x"}, "<C-c>", "<Esc>", {noremap = true, silent = true})
 
 -- aerial toggle
 vim.keymap.set('n', '<leader>a', ':AerialToggle<CR>')

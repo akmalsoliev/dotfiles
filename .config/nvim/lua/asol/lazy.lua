@@ -15,11 +15,11 @@ local plugins = {
   -- Colorscheme as Nord-Vim 
   'shaunsingh/nord.nvim',
 
+  -- Icons
+  'nvim-tree/nvim-web-devicons',
+
   -- Bufferline, for tabs
-  {
-    'akinsho/bufferline.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons'
-  },
+  'akinsho/bufferline.nvim',
 
   -- Telescope
   {
@@ -37,45 +37,14 @@ local plugins = {
 
   -- // Git Tools // --
   -- Gitignore generator
-  {
-    "wintermute-cell/gitignore.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim"
-    }
-  },
-  -- Git diff tool
-  "sindrets/diffview.nvim",
+  "wintermute-cell/gitignore.nvim",
 
-  -- LSP
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
-    dependencies = {
-      -- LSP Support
-      'neovim/nvim-lspconfig',
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-
-      -- Autocompletion
-      'hrsh7th/nvim-cmp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-nvim-lua',
-
-      -- Snippets
-      'L3MON4D3/LuaSnip',
-      'rafamadriz/friendly-snippets',
-    }
-  },
+  -- lsp
+  require("plugins.lsp"),
 
   -- pep8 indentation for python
   'Vimjas/vim-python-pep8-indent',
-  -- bracket close
-  'm4xshen/autoclose.nvim',
-  -- indent backline
-  "lukas-reineke/indent-blankline.nvim",
+
   -- commenting plugin
   {
     'numToStr/Comment.nvim',
@@ -84,12 +53,27 @@ local plugins = {
     end
   },
 
-  -- Noice
+  -- noice
   {
     "folke/noice.nvim",
     dependencies = {
       "MunifTanjim/nui.nvim",
-    }
+    },
+    event = "VeryLazy",
+    opts = function()
+      local enable_conceal = false          -- Hide command text if true
+      return {
+        -- Disable every other noice feature
+        messages = { enabled = false },
+        lsp = {
+          hover = { enabled = false },
+          signature = { enabled = false },
+          progress = { enabled = false },
+          message = { enabled = false },
+          smart_move = { enabled = false },
+        },
+      }
+    end
   },
 
   -- nvim-tree
@@ -129,11 +113,6 @@ local plugins = {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
   },
 
   -- CSV Rainbow
@@ -158,18 +137,35 @@ local plugins = {
     }
   },
 
-  -- FTerm
+  require("plugins.fterm"),
+
+  -- scrollbar
   {
-    'numToStr/FTerm.nvim',
-    border = 'double',
-    dimensions  = {
-        height = 0.9,
-        width = 0.9,
-    },
+    'petertriho/nvim-scrollbar',
   },
 
+  -- dashboard
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  },
+
+  require("plugins.sayonara"),
+
+  require("plugins.lazygit"),
+
+  "lukas-reineke/indent-blankline.nvim",
 }
 
 local opts = {}
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup({
+  plugins,
+  opts,
+})

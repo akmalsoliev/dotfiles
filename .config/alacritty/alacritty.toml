@@ -1,3 +1,4 @@
+# WARNING: This is depricated, back to iterms2
 live_config_reload = true
 
 [bell]

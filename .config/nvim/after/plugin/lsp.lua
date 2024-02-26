@@ -10,7 +10,7 @@ lsp.ensure_installed(install_languages)
 -- CMP
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
+local _ = lsp.defaults.cmp_mappings({
   ['<S-Tab>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<Tab>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
@@ -62,8 +62,7 @@ lsp_config.rust_analyzer.setup({
 })
 
 -- Python
-require('lspconfig').ruff_lsp.setup {
-}
+require('lspconfig').ruff_lsp.setup {}
 
 require('lspconfig').pyright.setup {
   on_attach = on_attach,
@@ -81,9 +80,20 @@ require('lspconfig').pyright.setup {
   },
 }
 
+-- Fix Undefined global 'vim'
+lsp_config.lua_ls.setup({
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+})
+
 -- Keymaps
 lsp.on_attach(function(_, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = {buffer = bufnr, remap = true}
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
   vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
@@ -99,10 +109,6 @@ end)
 
 local cmp_set = require('lsp_set.cmp_set')
 lsp.setup_nvim_cmp(cmp_set)
-
--- Fix Undefined global 'vim'
-local lua_set = require('lsp_set.lua_set')
-lsp_config.lua_ls.setup(lua_set)
 
 lsp.setup()
 

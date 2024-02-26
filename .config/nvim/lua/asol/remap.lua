@@ -4,10 +4,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>n", vim.cmd.BufferLineCycleNext)
 vim.keymap.set("n", "<leader>p", vim.cmd.BufferLineCyclePrev)
 vim.keymap.set("n", "<leader>b", vim.cmd.BufferLinePick)
---
--- Depreciated, using Sayonara now
--- Closes the current buffer and moves to the previews
-vim.keymap.set("n", "<leader>q", ":w<C-U>bprevious<bar> bdelete #<CR>")
 
 -- Line movement, in view mode only!
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -29,11 +25,6 @@ vim.keymap.set("n", ";", ":")
 
 -- Clear searcher
 vim.keymap.set("n", "<leader>c", ":noh<CR>", { silent = true })
-
--- Make file executable 
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %:p<CR>", { silent = true })
--- Run the code
-vim.keymap.set("n", "<leader>r", ":w |!%:p<CR>", { silent = true })
 
 -- Spell check on
 vim.keymap.set("n", "<leader>sp", ":set spell<CR>", { silent = true })

@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { 
+  ensure_installed = {
     "python",
     "scala",
     "rust",
@@ -7,6 +7,9 @@ require'nvim-treesitter.configs'.setup {
     "lua",
     "dockerfile",
     "make",
+    "yaml",
+    "json",
+    "sql"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)

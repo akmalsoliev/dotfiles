@@ -9,31 +9,29 @@ This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kic
 ## Features
 
 - **Plugins**: Utilizes popular plugins to enhance Neovim's functionality, including:
-  - `vim-airline` for status line
-  - `nerdtree` for file navigation
-  - `coc.nvim` for language server integration
-  - `fzf` for fuzzy file searching
-  - `vim-surround` for easy manipulation of surroundings
-  - `vim-commentary` for commenting code
-  - and more!
+    - aerial: a code outline window for skimming and quick navigation
+    - comment: smart and Powerful commenting plugin for neovim
+    - dab: debug Adapter Protocol client implementation for Neovim
+    - dashboard: fancy and Blazing Fast start screen plugin of neovim
+    - gitignore: a neovim plugin for generating .gitignore files in seconds
+    - gitsigns: super fast git decorations implemented purely in Lua
+    - indent-blankline: indentation guides for Neovim
+    - leap: general-purpose motion plugin for Neovim
+    - lualine: a blazing fast and easy to configure Neovim statusline 
+    - nord: modern colorscheme written in lua for Neovim
+    - nvim-cmp: a completion engine plugin for neovim written in Lua
+    - nvim-lspconfig: Configs for the Nvim LSP client
+    - nvim-scrollbar: extensible Neovim scrollbar
+    - nvim-tree: a file explorer for Neovim written in Lua
+    - nvim-treesitter: configurations and abstraction layer for Neovim
+    - rainbow_csv: highlight CSV columns in different rainbow colors.
+    - sayonara: single command that deletes the current buffer and handles the current window in a smart way
+    - telescope: a highly extendable fuzzy finder over lists
+    - todo-comments: highlight and search for todo comments
+    - undotree: visualizes the undo history and makes it easy to browse and switch between different undo branches
+    - which-key:  displays a popup with possible key bindings of the command you started typing
 - **Mappings**: Custom key mappings to streamline common tasks and improve productivity.
 - **Appearance**: Consistent and visually pleasing color scheme and status line setup.
-
-## Installation
-
-1. **Clone Repository**: Clone this repository to your local machine.
-
- ```
- git clone https://github.com/yourusername/neovim-config.git ~/.config/nvim
- ```
-
-2. **Install Plugins**: Open Neovim and run the command `:PlugInstall` to install all the required plugins.
-
-3. **Language Servers**: If using `coc.nvim`, ensure you have the necessary language servers installed for your preferred programming languages. You can do this by referring to the `coc-settings.json` file and installing the required language servers using `:CocInstall`.
-
-4. **Customization**: Feel free to customize any settings or mappings in the `init.vim` file to better suit your preferences and workflow.
-
-5. **Enjoy**: Open Neovim and start coding with your new setup!
 
 ## Feedback
 

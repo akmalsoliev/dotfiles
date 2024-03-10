@@ -18,6 +18,7 @@ This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kic
     - indent-blankline: indentation guides for Neovim
     - leap: general-purpose motion plugin for Neovim
     - lualine: a blazing fast and easy to configure Neovim statusline 
+    - mini: collection of various small independent plugins/modules
     - nord: modern colorscheme written in lua for Neovim
     - nvim-cmp: a completion engine plugin for neovim written in Lua
     - nvim-lspconfig: Configs for the Nvim LSP client

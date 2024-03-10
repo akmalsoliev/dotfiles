@@ -1,0 +1,25 @@
+lua/asol/plugins/
+aerial.lua
+comment.lua
+dab.lua
+dashboard.lua
+gitignore.lua
+gitsigns.lua
+indent-blankline.lua
+leap.lua
+lualine.lua
+nord.lua
+nvim-cmp.lua
+nvim-lspconfig.lua
+nvim-scrollbar.lua
+nvim-tree.lua
+nvim-treesitter.lua
+plugins.lua
+rainbow_csv.lua
+sayonara.lua
+telescope.lua
+todo-comments.lua
+undotree.lua
+which-key.lua
+
+1 directory, 22 files

@@ -1,5 +1,7 @@
 act
 aom
+apr
+apr-util
 aribb24
 asciinema
 autoconf
@@ -10,6 +12,7 @@ c-ares
 ca-certificates
 cairo
 capstone
+certifi
 cjson
 cmake
 colima
@@ -17,7 +20,6 @@ csvlens
 dav1d
 docker
 docker-completion
-docker-compose
 dprint
 dtc
 fd
@@ -36,6 +38,7 @@ gh
 ghostscript
 giflib
 git
+git-lfs
 glib
 glow
 gmp
@@ -45,6 +48,7 @@ graphite2
 harfbuzz
 hdf5
 highway
+htop
 hwloc
 icu4c
 imagemagick
@@ -105,6 +109,7 @@ libxcb
 libxdmcp
 libxext
 libxrender
+libyaml
 lima
 little-cms2
 llvm
@@ -160,6 +165,7 @@ snappy
 speex
 sqlite
 srt
+subversion
 svt-av1
 tbb
 tcl-tk
@@ -184,7 +190,6 @@ z3
 zeromq
 zimg
 zstd
-alacritty
 dbeaver-community
 discord
 font-fantasque-sans-mono

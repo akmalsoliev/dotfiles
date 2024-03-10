@@ -1,5 +1,5 @@
 return {
-  "lukas-reineke/indent-blankline.nvim"
+  "lukas-reineke/indent-blankline.nvim",
   config = function ()
     vim.opt.list = true
     vim.opt.listchars:append "space:⋅"

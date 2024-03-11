@@ -25,9 +25,7 @@ return {
   cmd = 'Sayonara',
   keys = {
     {
-      'q',
-      SayonaraBasedOnBufferCount,
-      mode = { 'n', 'v' },
+      'q', SayonaraBasedOnBufferCount, mode = { 'n', 'v' }, desc = "[q] Sayonara",
     },
   },
 }

@@ -19,7 +19,6 @@ require("lazy").setup({
     lazy = false,
     version = "*",
   },
-  ui = { border = 'rounded' },
   checker = { enabled = false },
   performance = {
     rtp = {

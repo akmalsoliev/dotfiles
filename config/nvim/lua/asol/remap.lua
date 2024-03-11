@@ -28,7 +28,7 @@ vim.keymap.set("x", "<leader>P", [["_dP]], {
 })
 
 -- Clear searcher
-vim.keymap.set("n", "<leader>c", ":noh<CR>", { 
+vim.keymap.set("n", "<leader>C", ":noh<CR>", { 
   silent = true, desc="[C]lear search",
 })
 

@@ -26,5 +26,8 @@ return {
       -- Preserve window size equality with (:help CTRL-W_=)
       preserve_equality = false,
     },
-  }
+  },
+    keys = {
+        {'<leader>a', ':AerialToggle<CR>', mode="n", desc="[A]erial Toggle"}
+    },
 }

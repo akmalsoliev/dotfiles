@@ -1,5 +1,15 @@
 SHELL := /bin/bash
 
+help: # Print help on Makefile
+	@grep '^[^.#]\+:\s\+.*#' Makefile | \
+	sed "s/\(.\+\):\s*\(.*\) #\s*\(.*\)/`printf "\033[93m"`\1`printf "\033[0m"`	\3 [\2]/" | \
+	expand -t20
+
+backup: # Full Backup
+	$(MAKE) backup_brew
+	$(MAKE) backup_neovim
+	$(MAKE) backup_tmux
+
 backup_brew: # Backup all brew applications
 	if [ -f brew_programs_list.txt ]; then \
 		rm brew_programs_list.txt; \
@@ -25,6 +35,11 @@ backup_tmux: # Backup TMUX Config
 	else \
 		echo "Failed TMUX backup"; \
 	fi
+
+set: # Full setup
+	$(MAKE) set_brew
+	$(MAKE) set_neovim
+	$(MAKE) set_tmux
 
 set_brew: # Setup Brew
 	xargs brew install < brew_programs_list.txt

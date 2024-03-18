@@ -1,11 +1,10 @@
-
---  ______    _ _ _                ____        _   _                 
--- |  ____|  | (_) |              / __ \      | | (_)                
--- | |__   __| |_| |_ ___  _ __  | |  | |_ __ | |_ _  ___  _ __  ___ 
+--  ______    _ _ _                ____        _   _
+-- |  ____|  | (_) |              / __ \      | | (_)
+-- | |__   __| |_| |_ ___  _ __  | |  | |_ __ | |_ _  ___  _ __  ___
 -- |  __| / _` | | __/ _ \| '__| | |  | | '_ \| __| |/ _ \| '_ \/ __|
 -- | |___| (_| | | || (_) | |    | |__| | |_) | |_| | (_) | | | \__ \
 -- |______\__,_|_|\__\___/|_|     \____/| .__/ \__|_|\___/|_| |_|___/
---                                      | |                          
+--                                      | |
 --                                      |_|
 
 -- Set to true if you have a Nerd Font installed
@@ -15,15 +14,15 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Enables 24-bit RGB color in the TUI.
 vim.opt.termguicolors = true
 
 -- Number of spaces that a <Tab> in the file counts for.
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
 -- In Insert mode: Use the appropriate number of spaces to insert a <Tab>.
 vim.opt.expandtab = true
 
@@ -48,10 +47,10 @@ vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- If this many milliseconds nothing is typed the swap file will be
 -- 	written to disk (see crash-recovery).
@@ -66,16 +65,16 @@ vim.opt.spk = "cursor"
 
 vim.opt.colorcolumn = "80"
 
---  ______ _ _         ____        _   _                 
--- |  ____(_) |       / __ \      | | (_)                
--- | |__   _| | ___  | |  | |_ __ | |_ _  ___  _ __  ___ 
+--  ______ _ _         ____        _   _
+-- |  ____(_) |       / __ \      | | (_)
+-- | |__   _| | ___  | |  | |_ __ | |_ _  ___  _ __  ___
 -- |  __| | | |/ _ \ | |  | | '_ \| __| |/ _ \| '_ \/ __|
 -- | |    | | |  __/ | |__| | |_) | |_| | (_) | | | \__ \
 -- |_|    |_|_|\___|  \____/| .__/ \__|_|\___/|_| |_|___/
---                          | |                          
---                          |_|                          
+--                          | |
+--                          |_|
 
--- Swap files store changes you've made to the buffer. If Vim or your computer 
+-- Swap files store changes you've made to the buffer. If Vim or your computer
 -- crashes, they allow you to recover those changes.
 vim.opt.swapfile = false
 vim.opt.backup = false

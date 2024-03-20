@@ -23,25 +23,25 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Preserve the paste
 vim.keymap.set("x", "<leader>P", [["_dP]], {
-	silent = true,
-	desc = "[P]reserve paste",
+  silent = true,
+  desc = "[P]reserve paste",
 })
 
 -- Clear searcher
 vim.keymap.set("n", "<leader>C", ":noh<CR>", {
-	silent = true,
-	desc = "[C]lear search",
+  silent = true,
+  desc = "[C]lear search",
 })
 
 -- Toggle spell check
 vim.keymap.set("n", "<leader>sp", require("asol.commands.spell"), {
-	silent = true,
-	desc = "[S][p]ell check toggle",
+  silent = true,
+  desc = "[S][p]ell check toggle",
 })
 -- Word suggestion
 vim.keymap.set("n", "<leader>sg", "z=", {
-	silent = true,
-	desc = "Word [S]u[g]gestion",
+  silent = true,
+  desc = "Word [S]u[g]gestion",
 })
 
 -- remapping escape
@@ -50,7 +50,7 @@ vim.keymap.set(allModes, "<Esc>", "<Nop>")
 
 -- Exit terminal mode
 vim.keymap.set("t", "<C-c>", "<C-\\><C-n>", {
-	desc = "Exit terminal mode",
+  desc = "Exit terminal mode",
 })
 
 -- UndoTree

@@ -27,7 +27,7 @@ return {
       preserve_equality = false,
     },
   },
-    keys = {
-        {'<leader>a', ':AerialToggle<CR>', mode="n", desc="[A]erial Toggle"}
-    },
+  keys = {
+    {'<leader>a', ':AerialToggle<CR>', mode="n", desc="[A]erial Toggle"}
+  },
 }

@@ -107,14 +107,6 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      ruff_lsp = {
-        init_options = {
-          settings = {
-            -- Any extra CLI arguments for `ruff` go here.
-            args = {},
-          }
-        }
-      },
       pyright = {
         settings = {
           pyright = {
@@ -123,32 +115,14 @@ return {
           },
           python = {
             analysis = {
-              -- Ignore all files for analysis to exclusively use Ruff for linting
-              ignore = { '*' },
+              typeCheckingMode = "basic",
             },
           },
         },
       },
 
-      rust_analyzer = {
-        {
-          imports = {
-            granularity = {
-              group = "module",
-            },
-            prefix = "self",
-          },
-          cargo = {
-            buildScripts = {
-              enable = true,
-            },
-          },
-          procMacro = {
-            enable = true,
-          },
-        },
-      },
-
+      ruff_lsp = {},
+      rust_analyzer = {},
       bashls = {},
       sqlls = {},
 
@@ -189,12 +163,11 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      "stylua",
-      "ruff",
-      "beautysh",
-      "sqlfmt",
-      "prettier",
-      "codespell",
+      "stylua", -- lua
+      "ruff", -- python
+      "beautysh", -- bash
+      "sqlfmt", -- SQL
+      "prettier", -- json
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

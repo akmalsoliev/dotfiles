@@ -1,16 +1,9 @@
 return { -- Autoformat
   "stevearc/conform.nvim",
-  formatters = {
-    stylelua = {
-      indent_width = 2
-    }
-  },
   keys = {
     {
       "<leader>f",
-      function()
-        require("conform").format({ timeout_ms = 3000 })
-      end,
+      '<CMD>lua require("conform").format({ timeout_ms = 3000 })<CR>',
       mode = { "n", "v" },
       desc = "[F]ormat file",
     },
@@ -24,10 +17,16 @@ return { -- Autoformat
     formatters_by_ft = {
       lua = { "stylua" },
       python = { "ruff_fix", "ruff_format" },
+      rust = { "rustfmt" },
       bash = { "beautysh" },
       sql = { "sql_formatter" },
       json = { "prettier" },
       ["*"] = { "trim_whitespace" },
     },
+  },
+  formatters = {
+    stylelua = {
+      indent_width = 2
+    }
   },
 }

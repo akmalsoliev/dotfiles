@@ -27,6 +27,9 @@ return { -- Autoformat
   formatters = {
     stylelua = {
       indent_width = 2
+    },
+    rustfmt = {
+      autosave = 1
     }
   },
 }

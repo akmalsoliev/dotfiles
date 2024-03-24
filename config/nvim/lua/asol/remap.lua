@@ -34,10 +34,13 @@ vim.keymap.set("n", "<leader>C", ":noh<CR>", {
 })
 
 -- Toggle spell check
-vim.keymap.set("n", "<leader>sp", require("asol.commands.spell"), {
-  silent = true,
-  desc = "[S][p]ell check toggle",
-})
+vim.keymap.set(
+  "n", "<leader>sp",
+  function ()
+    vim.opt.spell = not vim.opt.spell:get()
+  end,
+  { silent = true, desc = "[S][p]ell check toggle", }
+)
 -- Word suggestion
 vim.keymap.set("n", "<leader>sg", "z=", {
   silent = true,

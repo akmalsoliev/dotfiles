@@ -1,3 +1,4 @@
+-- Lazygit Implementation
 vim.api.nvim_create_user_command(
   'Lazygit',
   function()

@@ -52,7 +52,7 @@ vim.keymap.set(allModes, "<C-c>", "<Esc>", { silent = true })
 vim.keymap.set(allModes, "<Esc>", "<Nop>")
 
 -- Exit terminal mode
-vim.keymap.set("t", "<C-c>", "<C-\\><C-n>", {
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {
   desc = "Exit terminal mode",
 })
 

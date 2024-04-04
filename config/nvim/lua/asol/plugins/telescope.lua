@@ -39,6 +39,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
+    -- Search all files
+    vim.keymap.set(
+      'n', '<leader>sF',
+      function ()
+        builtin.find_files({ hidden = true })
+      end,
+      { desc = '[S]earch All [F]iles' }
+    )
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
       -- You can pass additional configuration to telescope to change theme, layout, etc.

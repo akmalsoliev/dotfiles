@@ -19,7 +19,7 @@ return { -- Autoformat
       python = { "ruff_fix", "ruff_format" },
       rust = { "rustfmt" },
       bash = { "beautysh" },
-      sql = { "sql_formatter" },
+      sql = { "sqlfluff" },
       json = { "prettier" },
       ["*"] = { "trim_whitespace" },
     },

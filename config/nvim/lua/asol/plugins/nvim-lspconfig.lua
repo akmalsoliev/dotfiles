@@ -188,7 +188,7 @@ return {
       "stylua", -- lua
       "ruff", -- python
       "beautysh", -- bash
-      "sqlfmt", -- SQL
+      "sqlfluff", -- SQL
       "prettier", -- json
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

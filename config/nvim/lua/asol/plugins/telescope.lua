@@ -43,7 +43,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set(
       'n', '<leader>sF',
       function ()
-        builtin.find_files({ hidden = true })
+        builtin.find_files({ hidden = true, no_ignore = true })
       end,
       { desc = '[S]earch All [F]iles' }
     )

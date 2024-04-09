@@ -2,10 +2,10 @@ return {
   'petertriho/nvim-scrollbar',
   config = function ()
     require("scrollbar").setup({
-      opts = {
-        excluded_filetypes = {
-          "NvimTree"
-        }
+      excluded_filetypes = {
+        "NvimTree",
+        "dashboard",
+        "TelescopePrompt",
       },
       handle = {
         text = "┃",

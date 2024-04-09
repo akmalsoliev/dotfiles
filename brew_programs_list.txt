@@ -18,6 +18,7 @@ cmake
 colima
 csvlens
 dav1d
+direnv
 docker
 docker-completion
 dprint
@@ -44,6 +45,7 @@ glow
 gmp
 gnutls
 go
+goto
 graphite2
 harfbuzz
 hdf5
@@ -150,6 +152,7 @@ pkg-config
 portaudio
 pugixml
 pyenv
+python-packaging
 python@3.12
 qemu
 rav1e

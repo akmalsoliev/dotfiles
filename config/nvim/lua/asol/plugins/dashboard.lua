@@ -1,25 +1,46 @@
-local banner = {
-  '  /$$$$$$        /$$                                                 /$$   ',
-  ' /$$__  $$      | $$                                                | $$   ',
-  '| $$  \\ $$      | $$   /$$       /$$$$$$/$$$$         /$$$$$$       | $$  ',
-  '| $$$$$$$$      | $$  /$$/      | $$_  $$_  $$       |____  $$      | $$   ',
-  '| $$__  $$      | $$$$$$/       | $$ \\ $$ \\ $$        /$$$$$$$      | $$ ',
-  '| $$  | $$      | $$_  $$       | $$ | $$ | $$       /$$__  $$      | $$   ',
-  '| $$  | $$      | $$ \\  $$      | $$ | $$ | $$      |  $$$$$$$      | $$  ',
-  '|__/  |__/      |__/  \\__/      |__/ |__/ |__/       \\_______/      |__/ ',
-  '                                                                           ',
-}
-
 return {
-  'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
+  "nvimdev/dashboard-nvim",
+  event = "VimEnter",
   config = function()
-    require('dashboard').setup {
-      theme = "hyper",
+    require("dashboard").setup({
+      theme = "doom",
       config = {
-        header = banner,
-      }
-    }
+        week_header = {
+          enable = true,
+        },
+        center = {
+          {
+            icon = " ",
+            icon_hl = "@variable",
+            desc = "New File",
+            group = "Label",
+            action = [[ene | startinser]],
+            key = "n",
+          },
+          {
+            desc = " Apps",
+            group = "DiagnosticHint",
+            action = "Lazy",
+            key = "a",
+          },
+          {
+            desc = " Mason",
+            group = "DiagnosticHint",
+            action = "Mason",
+            key = "m",
+          },
+          {
+            desc = "󰊳 Lazy Update",
+            group = "@property",
+            action = function()
+              vim.cmd("Lazy update")
+              vim.cmd("MasonUpdate")
+            end,
+            key = "u"
+          },
+        },
+      },
+    })
   end,
-  dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  dependencies = { { "nvim-tree/nvim-web-devicons" } },
 }

@@ -30,7 +30,7 @@ return {
             key = "m",
           },
           {
-            desc = "󰊳 Lazy Update",
+            desc = "󰊳 Update",
             group = "@property",
             action = function()
               vim.cmd("Lazy update")

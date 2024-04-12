@@ -1,3 +1,4 @@
+abseil
 act
 aom
 apr
@@ -15,12 +16,9 @@ capstone
 certifi
 cjson
 cmake
-colima
 csvlens
 dav1d
 direnv
-docker
-docker-completion
 dprint
 dtc
 fd
@@ -61,6 +59,7 @@ jbig2dec
 jpeg-turbo
 jpeg-xl
 jq
+jsoncpp
 lame
 lazydocker
 lazygit
@@ -149,7 +148,9 @@ pango
 pcre2
 pixman
 pkg-config
+podman
 portaudio
+protobuf
 pugixml
 pyenv
 python-packaging

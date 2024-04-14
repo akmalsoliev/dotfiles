@@ -11,11 +11,11 @@ function SayonaraBasedOnBufferCount()
   end
 
   -- Now, check the buffer count and execute the appropriate command
-  if bufferCount >= 2 then
+  if vim.bo.filetype == "FTerm" then
+    vim.cmd("q")
+  elseif bufferCount >= 2 then
     -- More than 2 buffers are open, use Sayonara!
     vim.cmd("Sayonara!")
-  elseif vim.bo.filetype == "FTerm" then
-    vim.cmd("q")
   else
     -- 2 or less buffers are open, use Sayonara
     vim.cmd("Sayonara")

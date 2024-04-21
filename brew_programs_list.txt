@@ -166,6 +166,7 @@ screenresolution
 sdl2
 shared-mime-info
 snappy
+sniffnet
 speex
 sqlite
 srt

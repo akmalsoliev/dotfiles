@@ -23,17 +23,9 @@ function __goto_usage
 end
 
 function __goto_get_db
-    if test -f "$GOTO_DB"
-        echo "$GOTO_DB"
-    else if test -d "$XDG_DATA_HOME"
-        mkdir -p "$XDG_DATA_HOME/goto"
-        touch -a "$XDG_DATA_HOME/goto/db"
-        echo "$XDG_DATA_HOME/goto/db"
-    else
-        mkdir -p "$HOME/.local/share/goto"
-        touch -a "$HOME/.local/share/goto/db"
-        echo "$HOME/.local/share/goto/db"
-    end
+  mkdir -p "$HOME/.config/goto"
+  touch -a "$HOME/.config/goto/db"
+  echo "$HOME/.config/goto/db"
 end
 
 function __goto_register

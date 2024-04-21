@@ -8,6 +8,7 @@ help: # Print help on Makefile
 backup: # Full Backup
 	$(MAKE) backup_brew
 	$(MAKE) backup_neovim
+	$(MAKE) backup_fish
 	$(MAKE) backup_tmux
 
 backup_brew: # Backup all brew applications
@@ -25,6 +26,15 @@ backup_neovim: # Backup Neovim
 		echo "Successful Neovim backup"; \
 	else \
 		echo "Failed Neovim backup"; \
+	fi
+
+backup_fish: # Backup Fish
+	if [ -d $(HOME)/.config/fish ]; then \
+		rm -rf config/fish/ && \
+		cp -r $(HOME)/.config/fish/ config/fish/ && \
+		echo "Successful Fish backup"; \
+	else \
+		echo "Failed Fish backup"; \
 	fi
 
 backup_tmux: # Backup TMUX Config
@@ -46,6 +56,9 @@ set_brew: # Setup Brew
 
 set_neovim: # Setup Neovim Config
 	cp -rf config/nvim/ $(HOME)/.config/nvim/
+
+set_fish: # Setup Neovim Config
+	cp -rf config/fish/ $(HOME)/.config/fish/
 
 set_tmux: # Setup Neovim Config
 	cp -f config/tmux.conf $(HOME)/.tmux.conf

@@ -2,7 +2,7 @@ if status is-interactive
 
 # Activate venv
 function sv
-    source venv/bin/activate.fish \\
+    source .venv/bin/activate.fish
     and tmux set-environment VIRTUAL_ENV $VIRTUAL_ENV
 end
 if test -n "$VIRTUAL_ENV"
@@ -37,12 +37,9 @@ alias ovim='nvim .'
 # upgrading all outdated pip packages
 alias pipup="pip freeze | sed 's/=.*//' | xargs pip install --upgrade"
 # uninstall all pip 
-alias pipuninstall="pip freeze | sed 's/=.*//' | xargs pip uninstall -y"
+alias pipuninstall="pip3 list --format freeze | sed 's/=.*//' | xargs pip3 uninstall -y"
 # glow default theme
 alias glow="glow -s /Users/akmalsoliev/Library/Preferences/glow/nord.json"
-
-# docker-compose alias
-alias dco="docker-compose"
 
 # Cargo aliases
 alias cr="cargo run"
@@ -54,7 +51,12 @@ set -g theme_nerd_fonts yes
 
 set -g theme_color_scheme nord
 
+# pyenv
 pyenv init - | source
+
+# direnv
+direnv hook fish | source
+set -g direnv_fish_mode eval_on_arrow
 
 # Removes date from the right side of the command line
 # intentional, because have everything in the tmux statusline

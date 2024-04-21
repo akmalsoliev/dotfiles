@@ -1,17 +1,12 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export PYENV_ROOT:/Users/akmalsoliev/\x2epyenv
-SETUVAR ZO_CMD:zo
-SETUVAR Z_CMD:z
-SETUVAR Z_DATA:/Users/akmalsoliev/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/akmalsoliev/\x2elocal/share/z
-SETUVAR Z_EXCLUDE:\x5e/Users/akmalsoliev\x24
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_franciscolourenco_2F_done_files:\x7e/\x2econfig/fish/conf\x2ed/done\x2efish
-SETUVAR _fisher_jethrokuan_2F_z_20__files:\x7e/\x2econfig/fish/functions/__z\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_add\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_clean\x2efish\x1e\x7e/\x2econfig/fish/functions/__z_complete\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
-SETUVAR _fisher_joseluisq_2F_gitnow_20__files:\x7e/\x2econfig/fish/functions/__gitnow_config_file\x2efish\x1e\x7e/\x2econfig/fish/functions/__gitnow_functions\x2efish\x1e\x7e/\x2econfig/fish/functions/__gitnow_manual\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/gitnow\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/gitnow_config\x2efish\x1e\x7e/\x2econfig/fish/completions/__gitnow_completions\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejoseluisq/gitnow\x20\x1ejethrokuan/z\x20\x1efranciscolourenco/done
+SETUVAR _fisher_matusf_2F_goto_files:\x7e/\x2econfig/fish/functions/goto\x2efish
+SETUVAR _fisher_plugins:franciscolourenco/done\x1ejorgebucaran/fisher\x1ematusf/goto
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:4c566a
 SETUVAR fish_color_cancel:\x2d\x2dreverse

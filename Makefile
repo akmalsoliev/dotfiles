@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+CONFIG_DIRS := nvim goto fish
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \
@@ -6,10 +7,21 @@ help: # Print help on Makefile
 	expand -t20
 
 backup: # Full Backup
+	$(MAKE) backup_config
 	$(MAKE) backup_brew
-	$(MAKE) backup_neovim
-	$(MAKE) backup_fish
 	$(MAKE) backup_tmux
+
+backup_config: #Back up specified files in .config
+	@for dir in $(CONFIG_DIRS); do \
+		if [ -d "$(HOME)/.config/$$dir" ]; then \
+		echo "Backing up $$dir..."; \
+		rm -rf "config/$$dir/" && \
+		cp -r "$(HOME)/.config/$$dir/" "config/$$dir/" && \
+		echo "Successful $$dir backup"; \
+		else \
+		echo "Failed to backup $$dir - directory does not exist"; \
+		fi \
+		done
 
 backup_brew: # Backup all brew applications
 	if [ -f brew_programs_list.txt ]; then \
@@ -18,24 +30,6 @@ backup_brew: # Backup all brew applications
 	touch brew_programs_list.txt 
 	brew list --formula >> brew_programs_list.txt
 	brew list --cask >> brew_programs_list.txt
-
-backup_neovim: # Backup Neovim
-	if [ -d $(HOME)/.config/nvim ]; then \
-		rm -rf config/nvim/ && \
-		cp -r $(HOME)/.config/nvim/ config/nvim/ && \
-		echo "Successful Neovim backup"; \
-	else \
-		echo "Failed Neovim backup"; \
-	fi
-
-backup_fish: # Backup Fish
-	if [ -d $(HOME)/.config/fish ]; then \
-		rm -rf config/fish/ && \
-		cp -r $(HOME)/.config/fish/ config/fish/ && \
-		echo "Successful Fish backup"; \
-	else \
-		echo "Failed Fish backup"; \
-	fi
 
 backup_tmux: # Backup TMUX Config
 	if [ -f $(HOME)/.tmux.conf ]; then \
@@ -46,19 +40,24 @@ backup_tmux: # Backup TMUX Config
 		echo "Failed TMUX backup"; \
 	fi
 
-set: # Full setup
-	$(MAKE) set_brew
-	$(MAKE) set_neovim
-	$(MAKE) set_tmux
+restore: # Full restore
+	$(MAKE) restore_config
+	$(MAKE) restore_brew
+	$(MAKE) restore_tmux
 
-set_brew: # Setup Brew
+restore_config: # Restore all /.config files
+	@for dir in $(CONFIG_DIRS); do \
+		if [ -d "config/$$dir" ]; then \
+		echo "Restoring $$dir..."; \
+		cp -rf "config/$$dir/" "$(HOME)/.config/$$dir/" && \
+		echo "Successful restore of $$dir"; \
+		else \
+		echo "Backup of $$dir not found"; \
+		fi \
+		done
+
+restore_brew: # Restore all brew installs
 	xargs brew install < brew_programs_list.txt
 
-set_neovim: # Setup Neovim Config
-	cp -rf config/nvim/ $(HOME)/.config/nvim/
-
-set_fish: # Setup Neovim Config
-	cp -rf config/fish/ $(HOME)/.config/fish/
-
-set_tmux: # Setup Neovim Config
+restore_tmux: # Restore .tmux.conf file
 	cp -f config/tmux.conf $(HOME)/.tmux.conf

@@ -37,6 +37,7 @@ gh
 ghostscript
 giflib
 git
+git-cliff
 git-lfs
 glib
 glow

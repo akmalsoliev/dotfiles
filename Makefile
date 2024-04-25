@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-CONFIG_DIRS := nvim goto fish
+CONFIG_DIRS := nvim goto fish stylua
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \

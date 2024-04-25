@@ -25,11 +25,11 @@ return { -- Autoformat
     },
   },
   formatters = {
-    stylelua = {
-      indent_width = 2
+    stylua = {
+      args = { "--config-path", "~/.config/stylua/stylua.toml" },
     },
     rustfmt = {
-      autosave = 1
-    }
+      autosave = 1,
+    },
   },
 }

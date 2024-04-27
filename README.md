@@ -44,18 +44,18 @@ Below are the commands you can use:
   success or failure of each backup operation.
 
 3. **Backup Brew Applications**
-   ```bash
-   make backup_brew
-   ```
-   This command backs up all installed brew formulae and casks to
-   `brew_programs_list.txt`.
+  ```bash
+  make backup_brew
+  ```
+  This command backs up all installed brew formulae and casks to
+  `brew_programs_list.txt`.
 
 4. **Backup TMUX Configuration**
-   ```bash
-   make backup_tmux
-   ```
-   Copies your `.tmux.conf` file from your home directory to the `config`
-   directory in this repository for backup.
+  ```bash
+  make backup_tmux
+  ```
+  Copies your `.tmux.conf` file from your home directory to the `config`
+  directory in this repository for backup.
 
 ### Restore Commands
  

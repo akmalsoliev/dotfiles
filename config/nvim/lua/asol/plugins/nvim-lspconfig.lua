@@ -66,6 +66,16 @@ return {
         --  See `:help K` for why this keymap
         map("K", vim.lsp.buf.hover, "Hover Documentation")
 
+        -- Opens a popup that displays documentation about method under your cursor
+        vim.keymap.set(
+          "i", 
+          "<C-S>", 
+          vim.lsp.buf.signature_help, 
+          { 
+            buffer = event.buf, 
+            desc = "LSP: Signature Help"
+          })
+
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header
         map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
@@ -120,8 +130,8 @@ return {
           },
         },
       },
-
       ruff_lsp = {},
+
       rust_analyzer = {
         settings = {
           ["rust-analyzer"] = {
@@ -137,16 +147,14 @@ return {
               },
             },
             procMacro = {
-              enable = true
+              enable = true,
             },
             checkOnSave = {
               command = "clippy",
             },
-          }
-        }
+          },
+        },
       },
-      bashls = {},
-      sqlls = {},
 
       lua_ls = {
         settings = {
@@ -171,6 +179,9 @@ return {
           },
         },
       },
+
+      bashls = {},
+      sqlls = {},
     }
 
     -- Ensure the servers and tools above are installed

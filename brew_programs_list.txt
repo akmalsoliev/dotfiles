@@ -16,9 +16,13 @@ capstone
 certifi
 cjson
 cmake
+colima
 csvlens
 dav1d
 direnv
+docker
+docker-completion
+docker-compose
 dprint
 dtc
 fd
@@ -149,7 +153,6 @@ pango
 pcre2
 pixman
 pkg-config
-podman
 portaudio
 protobuf
 pugixml
@@ -184,6 +187,7 @@ tree-sitter
 unbound
 unibilium
 utf8proc
+uv
 vde
 webp
 wget
@@ -193,6 +197,7 @@ xorgproto
 xvid
 xz
 z3
+zenith
 zeromq
 zimg
 zstd

@@ -20,7 +20,8 @@ end
 export PATH="/Users/$USER/.local/bin:$PATH"
 
 # lsd aliases
-alias ls='lsd -Fl'
+alias ls='lsd'
+alias lf='lsd -Fl'
 alias la='lsd -Fla'
 alias lt='lsd --tree'
 alias l1='lsd -1'
@@ -48,7 +49,6 @@ alias cc="cargo check"
 
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
-
 set -g theme_color_scheme nord
 
 # pyenv
@@ -56,7 +56,6 @@ pyenv init - | source
 
 # direnv
 direnv hook fish | source
-set -g direnv_fish_mode eval_on_arrow
 
 # Removes date from the right side of the command line
 # intentional, because have everything in the tmux statusline

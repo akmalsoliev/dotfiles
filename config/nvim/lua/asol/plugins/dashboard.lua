@@ -34,7 +34,7 @@ return {
             group = "@property",
             action = function()
               vim.cmd("Lazy update")
-              vim.cmd("MasonUpdate")
+              vim.cmd("MasonToolsUpdate")
             end,
             key = "u"
           },

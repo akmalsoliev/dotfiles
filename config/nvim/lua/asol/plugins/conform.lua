@@ -16,10 +16,9 @@ return { -- Autoformat
     },
     formatters_by_ft = {
       lua = { "stylua" },
-      python = { "ruff_fix", "ruff_format" },
+      python = { "ruff" },
       rust = { "rustfmt" },
       bash = { "beautysh" },
-      sql = { "sqlfluff" },
       json = { "prettier" },
       ["*"] = { "trim_whitespace" },
     },

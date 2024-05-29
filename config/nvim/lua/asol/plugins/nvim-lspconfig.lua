@@ -130,7 +130,7 @@ return {
           },
         },
       },
-      ruff_lsp = {},
+      ruff = {},
 
       rust_analyzer = {
         settings = {
@@ -181,7 +181,6 @@ return {
       },
 
       bashls = {},
-      sqlls = {},
     }
 
     -- Ensure the servers and tools above are installed
@@ -199,7 +198,6 @@ return {
       "stylua", -- lua
       "ruff", -- python
       "beautysh", -- bash
-      "sqlfluff", -- SQL
       "prettier", -- json
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

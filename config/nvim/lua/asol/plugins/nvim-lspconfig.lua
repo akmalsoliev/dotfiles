@@ -68,11 +68,11 @@ return {
 
         -- Opens a popup that displays documentation about method under your cursor
         vim.keymap.set(
-          "i", 
-          "<C-S>", 
-          vim.lsp.buf.signature_help, 
-          { 
-            buffer = event.buf, 
+          "i",
+          "<C-S>",
+          vim.lsp.buf.signature_help,
+          {
+            buffer = event.buf,
             desc = "LSP: Signature Help"
           })
 
@@ -97,6 +97,18 @@ return {
             callback = vim.lsp.buf.clear_references,
           })
         end
+
+        -- Autoenabled inlay hints, disable with th
+        if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+
+          map('<leader>th', function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+          end, '[T]oggle Inlay [H]ints')
+
+        end
+
       end,
     })
 
@@ -117,7 +129,7 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      pyright = {
+      basedpyright = {
         settings = {
           pyright = {
             -- Using Ruff's import organizer
@@ -181,6 +193,16 @@ return {
       },
 
       bashls = {},
+
+      docker_compose_language_service = {
+        filetypes = { "yaml" },
+        on_attach = function(client, bufnr)
+          local filename = vim.api.nvim_buf_get_name(bufnr)
+          if not (filename:match("docker%-compose%.yml$") or filename:match("compose%.yml$")) then
+            client.stop()
+          end
+        end
+      }
     }
 
     -- Ensure the servers and tools above are installed

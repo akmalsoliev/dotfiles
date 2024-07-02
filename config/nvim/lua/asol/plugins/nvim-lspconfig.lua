@@ -194,17 +194,6 @@ return {
 
       bashls = {},
 
-      docker_compose_language_service = {
-        filetypes = { "yaml" },
-        on_attach = function(client, bufnr)
-          local filename = vim.api.nvim_buf_get_name(bufnr)
-          if not (filename:match("docker%-compose%.yml$") or filename:match("compose%.yml$")) then
-            client.stop()
-          end
-        end
-      }
-    }
-
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
     --  other tools, you can run

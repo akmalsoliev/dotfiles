@@ -36,7 +36,7 @@ return {
               vim.cmd("Lazy update")
               vim.cmd("MasonToolsUpdate")
             end,
-            key = "u"
+            key = "u",
           },
         },
       },

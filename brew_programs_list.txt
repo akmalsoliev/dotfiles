@@ -30,7 +30,9 @@ freetype
 frei0r
 fribidi
 gcc
+gd
 gdbm
+gdk-pixbuf
 gettext
 gh
 ghostscript
@@ -45,6 +47,8 @@ gnutls
 go
 goto
 graphite2
+graphviz
+gts
 harfbuzz
 hdf5
 highway
@@ -66,11 +70,13 @@ leptonica
 libaec
 libarchive
 libass
+libavif
 libb2
 libbluray
 libde265
 libevent
 libgit2
+libgit2@1.7
 libheif
 libidn
 libidn2
@@ -83,6 +89,7 @@ libomp
 libpng
 libraw
 librist
+librsvg
 libsamplerate
 libslirp
 libsndfile
@@ -113,7 +120,9 @@ little-cms2
 llvm
 lpeg
 lsd
+lua
 luajit
+luarocks
 luv
 lz4
 lzo
@@ -127,6 +136,7 @@ msgpack
 ncurses
 neofetch
 neovim
+netpbm
 nettle
 node
 noti

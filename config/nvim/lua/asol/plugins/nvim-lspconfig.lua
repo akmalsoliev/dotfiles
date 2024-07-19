@@ -135,9 +135,9 @@ return {
             -- Using Ruff's import organizer
             disableOrganizeImports = true,
           },
-          python = {
+          basedpyright = {
             analysis = {
-              typeCheckingMode = "basic",
+              typeCheckingMode = "basic"
             },
           },
         },
@@ -193,6 +193,7 @@ return {
       },
 
       bashls = {},
+    }
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install

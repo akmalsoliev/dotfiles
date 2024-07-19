@@ -1,5 +1,8 @@
 if status is-interactive
 
+# Neofetch
+neofetch
+
 # Activate venv
 function sv
     source .venv/bin/activate.fish
@@ -37,7 +40,7 @@ alias vim='nvim'
 alias ovim='nvim .'
 # upgrading all outdated pip packages
 alias pipup="pip freeze | sed 's/=.*//' | xargs pip install --upgrade"
-# uninstall all pip 
+# uninstall all pip
 alias pipuninstall="pip3 list --format freeze | sed 's/=.*//' | xargs pip3 uninstall -y"
 # glow default theme
 alias glow="glow -s /Users/akmalsoliev/Library/Preferences/glow/nord.json"

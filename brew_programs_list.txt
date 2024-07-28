@@ -165,6 +165,7 @@ readline
 ripgrep
 rubberband
 rust
+rustup
 rustup-init
 screenresolution
 sdl2

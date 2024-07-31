@@ -20,6 +20,7 @@ return { -- Autoformat
       rust = { "rustfmt" },
       bash = { "beautysh" },
       json = { "prettier" },
+      yaml = { "yamlfmt" },
       ["*"] = { "trim_whitespace" },
     },
   },

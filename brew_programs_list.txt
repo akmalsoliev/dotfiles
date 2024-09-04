@@ -5,7 +5,6 @@ apr
 apr-util
 aribb24
 asciinema
-autoconf
 bash
 bat
 brotli
@@ -29,6 +28,7 @@ fontconfig
 freetype
 frei0r
 fribidi
+fzf
 gcc
 gd
 gdbm
@@ -157,7 +157,6 @@ pixman
 pkg-config
 portaudio
 protobuf
-pyenv
 python@3.12
 qemu
 rav1e
@@ -202,6 +201,7 @@ zenith
 zeromq
 zimg
 zstd
+alt-tab
 dbeaver-community
 discord
 font-fantasque-sans-mono

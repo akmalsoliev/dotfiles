@@ -196,6 +196,7 @@ x265
 xorgproto
 xvid
 xz
+yq
 z3
 zenith
 zeromq

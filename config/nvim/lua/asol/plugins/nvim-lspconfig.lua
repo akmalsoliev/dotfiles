@@ -1,3 +1,76 @@
+local additiona_mason = {
+  "stylua", -- lua
+  "ruff", -- python
+  "prettier", -- json
+  "yamlfmt",
+  "shellcheck",
+}
+
+local lsp_servers = {
+  basedpyright = {
+    settings = {
+      pyright = {
+        -- Using Ruff's import organizer
+        disableOrganizeImports = true,
+      },
+      basedpyright = {
+        analysis = {
+          typeCheckingMode = "standard",
+        },
+      },
+    },
+  },
+  ruff = {},
+
+  rust_analyzer = {
+    settings = {
+      ["rust-analyzer"] = {
+        imports = {
+          granularity = {
+            group = "module",
+          },
+          prefix = "self",
+        },
+        cargo = {
+          buildScripts = {
+            enable = true,
+          },
+        },
+        procMacro = {
+          enable = true,
+        },
+        checkOnSave = {
+          command = "clippy",
+        },
+      },
+    },
+  },
+
+  lua_ls = {
+    settings = {
+      Lua = {
+        runtime = { version = "LuaJIT" },
+        workspace = {
+          checkThirdParty = false,
+          -- Tells lua_ls where to find all the Lua files that you have loaded
+          -- for your neovim configuration.
+          library = {
+            "${3rd}/luv/library",
+            unpack(vim.api.nvim_get_runtime_file("", true)),
+          },
+          -- If lua_ls is really slow on your computer, you can try this instead:
+          -- library = { vim.env.VIMRUNTIME },
+        },
+        completion = {
+          callSnippet = "Replace",
+        },
+        -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+        -- diagnostics = { disable = { 'missing-fields' } },
+      },
+    },
+  },
+}
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -67,14 +140,10 @@ return {
         map("K", vim.lsp.buf.hover, "Hover Documentation")
 
         -- Opens a popup that displays documentation about method under your cursor
-        vim.keymap.set(
-          "i",
-          "<C-S>",
-          vim.lsp.buf.signature_help,
-          {
-            buffer = event.buf,
-            desc = "LSP: Signature Help"
-          })
+        vim.keymap.set("i", "<C-S>", vim.lsp.buf.signature_help, {
+          buffer = event.buf,
+          desc = "LSP: Signature Help",
+        })
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header
@@ -100,15 +169,12 @@ return {
 
         -- Autoenabled inlay hints, disable with th
         if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-
           vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 
-          map('<leader>th', function()
+          map("<leader>th", function()
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-          end, '[T]oggle Inlay [H]ints')
-
+          end, "[T]oggle Inlay [H]ints")
         end
-
       end,
     })
 
@@ -128,72 +194,7 @@ return {
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-    local servers = {
-      basedpyright = {
-        settings = {
-          pyright = {
-            -- Using Ruff's import organizer
-            disableOrganizeImports = true,
-          },
-          basedpyright = {
-            analysis = {
-              typeCheckingMode = "standard"
-            },
-          },
-        },
-      },
-      ruff = {},
-
-      rust_analyzer = {
-        settings = {
-          ["rust-analyzer"] = {
-            imports = {
-              granularity = {
-                group = "module",
-              },
-              prefix = "self",
-            },
-            cargo = {
-              buildScripts = {
-                enable = true,
-              },
-            },
-            procMacro = {
-              enable = true,
-            },
-            checkOnSave = {
-              command = "clippy",
-            },
-          },
-        },
-      },
-
-      lua_ls = {
-        settings = {
-          Lua = {
-            runtime = { version = "LuaJIT" },
-            workspace = {
-              checkThirdParty = false,
-              -- Tells lua_ls where to find all the Lua files that you have loaded
-              -- for your neovim configuration.
-              library = {
-                "${3rd}/luv/library",
-                unpack(vim.api.nvim_get_runtime_file("", true)),
-              },
-              -- If lua_ls is really slow on your computer, you can try this instead:
-              -- library = { vim.env.VIMRUNTIME },
-            },
-            completion = {
-              callSnippet = "Replace",
-            },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            -- diagnostics = { disable = { 'missing-fields' } },
-          },
-        },
-      },
-
-      bashls = {},
-    }
+    local servers = lsp_servers
 
     -- Ensure the servers and tools above are installed
     --  To check the current status of installed tools and/or manually install
@@ -206,13 +207,7 @@ return {
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      "stylua", -- lua
-      "ruff", -- python
-      "beautysh", -- bash
-      "prettier", -- json
-      "yamlfmt",
-    })
+    vim.list_extend(ensure_installed, { additiona_mason })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
     require("mason-lspconfig").setup({

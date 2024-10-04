@@ -63,6 +63,7 @@ jpeg-turbo
 jpeg-xl
 jq
 jsoncpp
+krb5
 lame
 lazydocker
 lazygit
@@ -87,6 +88,7 @@ libnghttp2
 libogg
 libomp
 libpng
+libpq
 libraw
 librist
 librsvg
@@ -117,7 +119,7 @@ libxext
 libxrender
 lima
 little-cms2
-llvm
+llvm@18
 lpeg
 lsd
 lua
@@ -157,6 +159,7 @@ pixman
 pkg-config
 portaudio
 protobuf
+python-packaging
 python@3.12
 qemu
 rav1e
@@ -197,7 +200,6 @@ xorgproto
 xvid
 xz
 yq
-z3
 zenith
 zeromq
 zimg

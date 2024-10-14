@@ -54,6 +54,7 @@ hdf5
 highway
 htop
 icu4c
+icu4c@75
 imagemagick
 imath
 isl

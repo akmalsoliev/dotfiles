@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-CONFIG_DIRS := nvim goto fish stylua
+CONFIG_DIRS := nvim stylua zsh tmux
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \
@@ -9,7 +9,6 @@ help: # Print help on Makefile
 backup: # Full Backup
 	$(MAKE) backup_config
 	$(MAKE) backup_brew
-	$(MAKE) backup_tmux
 
 backup_config: #Back up specified files in .config
 	@for dir in $(CONFIG_DIRS); do \
@@ -31,19 +30,9 @@ backup_brew: # Backup all brew applications
 	brew list --formula >> brew_programs_list.txt
 	brew list --cask >> brew_programs_list.txt
 
-backup_tmux: # Backup TMUX Config
-	if [ -f $(HOME)/.tmux.conf ]; then \
-		[ -f config/tmux.conf ] && rm config/tmux.conf; \
-		cp $(HOME)/.tmux.conf config/tmux.conf && \
-		echo "Successful TMUX backup"; \
-	else \
-		echo "Failed TMUX backup"; \
-	fi
-
 restore: # Full restore
 	$(MAKE) restore_config
 	$(MAKE) restore_brew
-	$(MAKE) restore_tmux
 
 restore_config: # Restore all /.config files
 	@for dir in $(CONFIG_DIRS); do \
@@ -58,6 +47,3 @@ restore_config: # Restore all /.config files
 
 restore_brew: # Restore all brew installs
 	xargs brew install < brew_programs_list.txt
-
-restore_tmux: # Restore .tmux.conf file
-	cp -f config/tmux.conf $(HOME)/.tmux.conf

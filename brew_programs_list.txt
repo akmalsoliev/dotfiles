@@ -5,6 +5,7 @@ apr
 apr-util
 aribb24
 asciinema
+autoenv
 bash
 bat
 brotli
@@ -21,7 +22,6 @@ dprint
 dtc
 fd
 ffmpeg
-fish
 flac
 folderify
 fontconfig
@@ -76,9 +76,9 @@ libavif
 libb2
 libbluray
 libde265
+libdeflate
 libevent
 libgit2
-libgit2@1.7
 libheif
 libidn
 libidn2
@@ -120,7 +120,7 @@ libxext
 libxrender
 lima
 little-cms2
-llvm@18
+llvm
 lpeg
 lsd
 lua
@@ -155,6 +155,7 @@ opusfile
 p11-kit
 pandoc
 pango
+pcre
 pcre2
 pixman
 pkg-config
@@ -162,6 +163,7 @@ portaudio
 protobuf
 python-packaging
 python@3.12
+python@3.13
 qemu
 rav1e
 readline
@@ -179,6 +181,7 @@ sox
 speex
 sqlite
 srt
+starship
 subversion
 svt-av1
 tcl-tk
@@ -201,9 +204,12 @@ xorgproto
 xvid
 xz
 yq
+z3
 zenith
 zeromq
 zimg
+zoxide
+zsh
 zstd
 alt-tab
 dbeaver-community
@@ -214,5 +220,6 @@ git-credential-manager
 hiddenbar
 iina
 iterm2
+linearmouse
 qbittorrent
 spotify

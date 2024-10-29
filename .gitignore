@@ -1,3 +1,4 @@
 .DS_Store 
 lazy-lock.json
 config/fish/functions/engie*.fish
+config/tmux/plugins

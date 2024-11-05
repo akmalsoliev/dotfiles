@@ -53,8 +53,8 @@ harfbuzz
 hdf5
 highway
 htop
-icu4c
 icu4c@75
+icu4c@76
 imagemagick
 imath
 isl

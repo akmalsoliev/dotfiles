@@ -78,12 +78,17 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
-
+    "ray-x/lsp_signature.nvim",
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { "j-hui/fidget.nvim", opts = {} },
   },
   config = function()
+    require('lsp_signature').setup({
+      bind = true,
+      handler_opts = { border = 'single' },
+    })
+
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
       callback = function(event)
@@ -140,7 +145,7 @@ return {
         map("K", vim.lsp.buf.hover, "Hover Documentation")
 
         -- Opens a popup that displays documentation about method under your cursor
-        vim.keymap.set("i", "<C-S>", vim.lsp.buf.signature_help, {
+        vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, {
           buffer = event.buf,
           desc = "LSP: Signature Help",
         })

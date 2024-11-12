@@ -1,4 +1,4 @@
-local additiona_mason = {
+local additional_mason = {
   "stylua", -- lua
   "ruff", -- python
   "prettier", -- json
@@ -212,7 +212,9 @@ return {
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, { additiona_mason })
+    for _, tool in ipairs(additional_mason) do
+      table.insert(ensure_installed, tool)
+    end
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
     require("mason-lspconfig").setup({

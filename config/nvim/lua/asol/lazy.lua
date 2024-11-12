@@ -20,7 +20,8 @@ require("lazy").setup({
     version = "*",
   },
   -- automatically check for plugin updates
-  checker = { enabled = true },
+  -- this will slow down the startup time, extremely annoying if you're impatient 
+  checker = { enabled = false },
   performance = {
     rtp = {
       -- disable some rtp plugins

@@ -36,6 +36,7 @@ zinit snippet OMZP::git
 zinit snippet OMZP::pj
 zinit snippet OMZP::sudo
 
+
 # Command not found
 HB_CNF_HANDLER="$(brew --repository)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
@@ -117,3 +118,6 @@ tmux() {
 if [[ -z "$TMUX" && "$TERM" != "screen" ]]; then
     exec tmux
 fi
+
+# Git completion fix
+autoload -Uz compinit && compinit

@@ -13,6 +13,7 @@ c-ares
 ca-certificates
 cairo
 capstone
+certifi
 cjson
 cmake
 csvlens
@@ -53,6 +54,7 @@ harfbuzz
 hdf5
 highway
 htop
+huggingface-cli
 icu4c@75
 icu4c@76
 imagemagick
@@ -102,6 +104,7 @@ libssh
 libssh2
 libtasn1
 libtiff
+libtommath
 libtool
 libunibreak
 libunistring
@@ -118,6 +121,7 @@ libxcb
 libxdmcp
 libxext
 libxrender
+libyaml
 lima
 little-cms2
 llvm
@@ -158,7 +162,7 @@ pango
 pcre
 pcre2
 pixman
-pkg-config
+pkgconf
 portaudio
 protobuf
 python-packaging
@@ -210,6 +214,7 @@ zeromq
 zimg
 zoxide
 zsh
+zsh-completions
 zstd
 alt-tab
 dbeaver-community

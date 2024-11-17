@@ -21,6 +21,11 @@ return { -- Autoformat
       bash = { "beautysh" },
       json = { "prettier" },
       yaml = { "yamlfmt" },
+      dockerfile = { "dockerls" },
+      compose = {
+        "docker_compose_language_service",
+        file_patterns = { "*compose*.yaml" }, -- Match any file with "compose" in the name
+      },
       ["*"] = { "trim_whitespace" },
     },
   },

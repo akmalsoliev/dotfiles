@@ -4,6 +4,8 @@ local additional_mason = {
   "prettier", -- json
   "yamlfmt",
   "shellcheck",
+  "dockerls",
+  "docker_compose_language_service",
 }
 
 local lsp_servers = {
@@ -84,9 +86,9 @@ return {
     { "j-hui/fidget.nvim", opts = {} },
   },
   config = function()
-    require('lsp_signature').setup({
+    require("lsp_signature").setup({
       bind = true,
-      handler_opts = { border = 'single' },
+      handler_opts = { border = "single" },
     })
 
     vim.api.nvim_create_autocmd("LspAttach", {

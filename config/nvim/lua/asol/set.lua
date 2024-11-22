@@ -65,6 +65,9 @@ vim.opt.spk = "cursor"
 
 vim.opt.colorcolumn = "80"
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 --  ______ _ _         ____        _   _
 -- |  ____(_) |       / __ \      | | (_)
 -- | |__   _| | ___  | |  | |_ __ | |_ _  ___  _ __  ___

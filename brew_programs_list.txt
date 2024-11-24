@@ -226,5 +226,6 @@ hiddenbar
 iina
 iterm2
 linearmouse
+neohtop
 qbittorrent
 spotify

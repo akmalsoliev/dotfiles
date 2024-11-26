@@ -20,6 +20,13 @@ return { -- Fuzzy Finder (files, lsp, etc)
           require('telescope.themes').get_dropdown(),
         },
       },
+      defaults = {
+        mappings = {
+          i = {
+            ["<C-s>"] = require("telescope.actions").select_horizontal
+          }
+        },
+      },
     }
 
     -- Enable telescope extensions, if they are installed

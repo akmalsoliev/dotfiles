@@ -1,7 +1,7 @@
 local additional_mason = {
   "stylua", -- lua
   "ruff", -- python
-  "prettier", -- json
+  "fixjson", -- json
   "yamlfmt",
   "shellcheck",
   "dockerls",

@@ -19,7 +19,7 @@ return { -- Autoformat
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       rust = { "rustfmt" },
       bash = { "beautysh" },
-      json = { "prettier" },
+      json = { "fixjson" },
       yaml = { "yamlfmt" },
       dockerfile = { "dockerls" },
       compose = {

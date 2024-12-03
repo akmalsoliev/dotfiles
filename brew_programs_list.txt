@@ -14,6 +14,7 @@ ca-certificates
 cairo
 capstone
 certifi
+cfn-lint
 cjson
 cmake
 csvlens

@@ -17,7 +17,6 @@ certifi
 cfn-lint
 cjson
 cmake
-csvlens
 dav1d
 direnv
 dprint
@@ -56,6 +55,7 @@ hdf5
 highway
 htop
 huggingface-cli
+hyperfine
 icu4c@75
 icu4c@76
 imagemagick
@@ -220,11 +220,9 @@ zstd
 alt-tab
 dbeaver-community
 discord
-font-fantasque-sans-mono
-font-hack-nerd-font
+ghostty
 git-credential-manager
 hiddenbar
-iina
 iterm2
 linearmouse
 neohtop

@@ -63,7 +63,7 @@ vim.opt.pumheight = 10
 -- 	closing or resizing horizontal splits.
 vim.opt.spk = "cursor"
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "90"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true

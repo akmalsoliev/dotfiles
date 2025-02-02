@@ -9,6 +9,10 @@ if status is-interactive
   export PATH="/Users/$USER/.local/bin:$PATH"
   set -gx XDG_CONFIG_HOME $HOME/.config
 
+  # pure prompt
+  set --universal pure_show_system_time true
+  set --universal pure_color_system_time pure_color_mute
+
   # lsd aliases
   alias ls='lsd'
   alias lf='lsd -Fl'

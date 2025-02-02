@@ -2,7 +2,8 @@ local additional_mason = {
   "stylua", -- lua
   "ruff", -- python
   "fixjson", -- json
-  "yamlfmt",
+  "prettier", -- typescript
+  "typescript-language-server", -- typescript
   "shellcheck",
   "dockerls",
   "docker_compose_language_service",

@@ -20,7 +20,7 @@ return { -- Autoformat
       rust = { "rustfmt" },
       bash = { "beautysh" },
       json = { "fixjson" },
-      yaml = { "yamlfmt" },
+      typescript = { "prettier" },
       dockerfile = { "dockerls" },
       compose = {
         "docker_compose_language_service",

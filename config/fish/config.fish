@@ -5,18 +5,9 @@ if status is-interactive
     source .venv/bin/activate.fish
   end
 
-  # iterm integration
-  test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
-  # iterm integration
-  source ~/.iterm2_shell_integration.fish
-
-  if status is-interactive
-    and not set -q TMUX
-    exec tmux
-  end
-
+  set -gx TMUX_CONFIG $HOME/.config/tmux/tmux.config
   export PATH="/Users/$USER/.local/bin:$PATH"
+  set -gx XDG_CONFIG_HOME $HOME/.config
 
   # lsd aliases
   alias ls='lsd'
@@ -44,8 +35,13 @@ if status is-interactive
   set -g theme_powerline_fonts no
   set -g theme_nerd_fonts yes
 
+  set -gx PROJECT_PATHS ~/Workspace/ ~/Workspace/Engie/ ~/.config/
+
   # direnv
   direnv hook fish | source
+
+  # uv integration
+  uv generate-shell-completion fish | source
 
   # Removes date from the right side of the command line
   # intentional, because have everything in the tmux statusline
@@ -53,5 +49,9 @@ if status is-interactive
     #intentionally left blank
   end
 
+  if status is-interactive
+    and not set -q TMUX
+    exec tmux
+  end
+
 end
-uv generate-shell-completion fish | source

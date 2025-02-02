@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-CONFIG_DIRS := nvim stylua zsh tmux
+CONFIG_DIRS := nvim stylua fish tmux
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \

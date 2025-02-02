@@ -17,12 +17,14 @@ certifi
 cfn-lint
 cjson
 cmake
+cmatrix
 dav1d
 direnv
 dprint
 dtc
 fd
 ffmpeg
+fish
 flac
 folderify
 fontconfig
@@ -82,6 +84,7 @@ libde265
 libdeflate
 libevent
 libgit2
+libgit2@1.8
 libheif
 libidn
 libidn2
@@ -226,5 +229,6 @@ hiddenbar
 iterm2
 linearmouse
 neohtop
+orbstack
 qbittorrent
 spotify

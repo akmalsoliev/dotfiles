@@ -3,7 +3,7 @@ return {
   event = 'VimEnter',
   keys = {
     {
-      "<leader>u",
+      "<leader>ut",
       vim.cmd.UndotreeToggle,
       desc = "[U]ndooTree Toggle",
       mode = "n"

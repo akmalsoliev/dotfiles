@@ -33,10 +33,6 @@ vim.keymap.set("n", "<leader>C", ":noh<CR>", {
   desc = "[C]lear search",
 })
 
--- Toggle spell check
-vim.keymap.set("n", "<leader>sp", function()
-  vim.opt.spell = not vim.opt.spell:get()
-end, { silent = true, desc = "[S][p]ell check toggle" })
 -- Word suggestion
 vim.keymap.set("n", "<leader>sg", "z=", {
   silent = true,
@@ -50,6 +46,3 @@ vim.keymap.set(allModes, "<C-c>", "<Esc>", { silent = true })
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", {
   desc = "Exit terminal mode",
 })
-
--- UndoTree
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "[U]ndoo Tree" })

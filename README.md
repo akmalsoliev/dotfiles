@@ -1,6 +1,6 @@
 # Dotfiles README
 
-Welcome to my personalized dotfiles repository. It contains your configurations for `Neovim`, `tmux`, and `zsh`, as well as a list of `brew` applications I use.
+Welcome to my personalized dotfiles repository. It contains your configurations for `Neovim`, `tmux`, `ghostty` and `fish`, as well as a list of `brew` applications I use.
 
 ## Structure
 
@@ -12,6 +12,8 @@ Here is the basic structure of the repository:
 ├── README.md
 ├── brew_programs_list.txt
 └── config
+    ├── fish
+    ├── ghostty
     ├── nvim
     ├── stylua
     ├── tmux

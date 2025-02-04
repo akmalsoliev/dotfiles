@@ -2,10 +2,10 @@ return { -- Autoformat
   "stevearc/conform.nvim",
   keys = {
     {
-      "<leader>f",
+      "<leader>fo",
       '<CMD>lua require("conform").format({ timeout_ms = 3000 })<CR>',
       mode = { "n", "v" },
-      desc = "[F]ormat file",
+      desc = "[f][o]rmat file",
     },
   },
   opts = {

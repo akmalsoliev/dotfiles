@@ -19,6 +19,7 @@ vim.g.maplocalleader = " "
 --
 
 local configDir = vim.fn.stdpath("config")
+
 local files = vim.fn.glob(configDir .. "/lua/asol/*.lua")
 local splitFiles = vim.split(files, "\n")
 local username = "asol"
@@ -28,4 +29,12 @@ for _, v in pairs(splitFiles) do
   if fileName ~= "init" then
     require(username .. "." .. fileName)
   end
+end
+
+local lspFiles = vim.fn.glob(configDir .. "/lsp/*.lua")
+local lspSplitFiles = vim.split(lspFiles, "\n")
+
+for _, files in pairs(lspSplitFiles) do
+  local fileName = files:match("([^/\\]+)%.lua$")
+  vim.lsp.enable(fileName)
 end

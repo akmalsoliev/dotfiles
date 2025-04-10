@@ -5,7 +5,7 @@ return { -- Autoformat
       "<leader>fo",
       '<CMD>lua require("conform").format({ timeout_ms = 3000 })<CR>',
       mode = { "n", "v" },
-      desc = "[f][o]rmat file",
+      desc = "Format file",
     },
   },
   opts = {
@@ -18,14 +18,7 @@ return { -- Autoformat
       lua = { "stylua" },
       python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
       rust = { "rustfmt" },
-      bash = { "beautysh" },
       json = { "fixjson" },
-      typescript = { "prettier" },
-      dockerfile = { "dockerls" },
-      compose = {
-        "docker_compose_language_service",
-        file_patterns = { "*compose*.yaml" }, -- Match any file with "compose" in the name
-      },
       ["*"] = { "trim_whitespace" },
     },
   },

@@ -1,0 +1,6 @@
+-- return {
+--   cmd = { "pyrefly", "lsp" },
+--   filetypes = { "python" },
+--   settings = {},
+--   root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
+-- }

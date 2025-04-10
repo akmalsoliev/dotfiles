@@ -10,30 +10,40 @@ This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kic
 
 ### **Plugins**: Utilizes popular plugins to enhance Neovim's functionality, including:
   - aerial: a code outline window for skimming and quick navigation
+  - blink-cmp: a modern completion engine with fuzzy matching and better UI
   - colorscheme-catppuccin: a soothing pastel color scheme for enhanced visual experience
   - conform: a formatting solution to get consistent code styles
-  - copilot: GitHub Copilot integration for AI-powered code completions
   - dab: debug Adapter Protocol client implementation for Neovim
   - gitignore: a plugin to manage .gitignore files efficiently
   - gitsigns: git integration for Neovim to show git change signs and perform git actions
   - leap: an advanced navigation plugin for jumping to any location in the text efficiently
   - lualine: a responsive statusline written in Lua with a variety of configurations
+  - mason: easily install and manage LSP servers, linters, and formatters
   - mini: a minimal and fast collection of Lua modules for Neovim
-  - nvim-cmp: a completion plugin for Neovim to provide intelligent autocompletion
-  - nvim-lspconfig: ease setting up language servers for Neovim’s built-in LSP client
+  - minuet: AI code completion using local Ollama models
   - nvim-scrollbar: a customizable scrollbar plugin for Neovim
-  - nvim-tree: a file explorer tree for navigating and managing files from within Neovim
   - nvim-treesitter: a better syntax highlighting and code parsing using Tree-sitter
   - oil: an improved file explorer as a buffer in Neovim
   - rainbow_csv: a highlighter for CSV and TSV files to enhance readability
+  - smear-cursor: enhanced cursor animation for better visibility
   - snacks: a collection of useful utilities and enhancements for Neovim
-  - telescope: an extensible fuzzy finder over lists for Neovim
   - todo-comments: highlight and manage TODO comments within your code
-  - undotree: a visual undotree for better understanding of undo history
   - which-key: a keybinding helper for discovering key mappings in Neovim
 
 - **Appearance**: Consistent and visually pleasing color scheme and status line setup.
 ![Screenshot](./screenshot.png)
+
+## Setup
+The configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management.
+
+For AI completion features, this setup uses:
+- minuet-ai.nvim connected to Ollama for local AI code completion
+- blink.cmp for modern code completion with fuzzy matching
+
+## Performance
+The configuration optimizes Neovim's startup time by:
+- Lazy-loading plugins when possible
+- Disabling unnecessary built-in plugins
 
 ## Feedback
 

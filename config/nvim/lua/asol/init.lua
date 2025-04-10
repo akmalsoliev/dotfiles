@@ -6,6 +6,7 @@
 -- |______\___|\__,_|\__,_|\___|_|    |_____/ \___|\__|\__,_| .__/
 --                                                          | |
 --                                                          |_|
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -15,8 +16,6 @@ vim.g.maplocalleader = " "
 -- | |    / _ \ / _` |/ _` |
 -- | |___| (_) | (_| | (_| |
 -- |______\___/ \__,_|\__,_|
---
---
 
 local configDir = vim.fn.stdpath("config")
 
@@ -30,6 +29,13 @@ for _, v in pairs(splitFiles) do
     require(username .. "." .. fileName)
   end
 end
+
+--  _       _____ _____
+-- | |     / ____|  __ \
+-- | |    | (___ | |__) |
+-- | |     \___ \|  ___/
+-- | |____ ____) | |
+-- |______|_____/|_|
 
 local lspFiles = vim.fn.glob(configDir .. "/lsp/*.lua")
 local lspSplitFiles = vim.split(lspFiles, "\n")

@@ -56,10 +56,11 @@ harfbuzz
 hdf5
 highway
 htop
+http-server
 huggingface-cli
 hyperfine
-icu4c@75
 icu4c@76
+icu4c@77
 imagemagick
 imath
 isl
@@ -129,6 +130,7 @@ libyaml
 lima
 little-cms2
 llvm
+llvm@19
 lpeg
 lsd
 lua
@@ -194,6 +196,7 @@ subversion
 svt-av1
 tcl-tk
 terminal-notifier
+terraform
 tesseract
 theora
 tmux

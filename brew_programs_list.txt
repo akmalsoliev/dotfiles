@@ -8,6 +8,7 @@ asciinema
 autoenv
 bash
 bat
+boost
 brotli
 c-ares
 ca-certificates
@@ -20,13 +21,20 @@ cmake
 cmatrix
 dav1d
 direnv
+double-conversion
 dprint
 dtc
+edencommon
+fb303
+fbthrift
 fd
 ffmpeg
 fish
+fizz
 flac
+fmt
 folderify
+folly
 fontconfig
 freetype
 frei0r
@@ -37,6 +45,7 @@ gd
 gdbm
 gdk-pixbuf
 gettext
+gflags
 gh
 ghostscript
 giflib
@@ -44,6 +53,7 @@ git
 git-cliff
 git-lfs
 glib
+glog
 glow
 gmp
 gnutls
@@ -85,7 +95,6 @@ libde265
 libdeflate
 libevent
 libgit2
-libgit2@1.8
 libheif
 libidn
 libidn2
@@ -119,7 +128,6 @@ libvidstab
 libvmaf
 libvorbis
 libvpx
-libvterm
 libx11
 libxau
 libxcb
@@ -145,7 +153,6 @@ mbedtls
 mpdecimal
 mpfr
 mpg123
-msgpack
 ncurses
 neofetch
 neovim
@@ -194,6 +201,7 @@ srt
 starship
 subversion
 svt-av1
+swig
 tcl-tk
 terminal-notifier
 terraform
@@ -207,12 +215,15 @@ unibilium
 utf8proc
 uv
 vde
+wangle
+watchman
 webp
 wget
 x264
 x265
 xorgproto
 xvid
+xxhash
 xz
 yq
 z3

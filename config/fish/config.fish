@@ -59,3 +59,8 @@ if status is-interactive
   end
 
 end
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/akmalsoliev/.cache/lm-studio/bin
+# End of LM Studio CLI section
+

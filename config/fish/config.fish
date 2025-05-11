@@ -6,8 +6,13 @@ if status is-interactive
   end
 
   set -gx TMUX_CONFIG $HOME/.config/tmux/tmux.config
-  export PATH="/Users/$USER/.local/bin:$PATH"
+  # Create XDG_CONFIG_HOME
   set -gx XDG_CONFIG_HOME $HOME/.config
+
+  # Adding paths
+  fish_add_path /Users/$USER/.local/bin
+  fish_add_path /Users/$USER/.cache/lm-studio/bin
+  fish_add_path /opt/homebrew/sbin
 
   # pure prompt
   set --universal pure_show_system_time true
@@ -22,12 +27,6 @@ if status is-interactive
 
   # cli aliases
   alias clr='clear'
-
-  # git aliases
-  alias gs='git status'
-  alias ga='git add'
-  alias gc='git commit'
-  alias gd='git diff'
 
   # Neovim aliase
   alias vim='nvim'
@@ -59,8 +58,3 @@ if status is-interactive
   end
 
 end
-
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/akmalsoliev/.cache/lm-studio/bin
-# End of LM Studio CLI section
-

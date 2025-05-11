@@ -25,6 +25,7 @@ double-conversion
 dprint
 dtc
 edencommon
+erlang
 fb303
 fbthrift
 fd
@@ -182,6 +183,7 @@ python-packaging
 python@3.12
 python@3.13
 qemu
+rabbitmq
 rav1e
 readline
 ripgrep
@@ -212,6 +214,7 @@ tree
 tree-sitter
 unbound
 unibilium
+unixodbc
 utf8proc
 uv
 vde
@@ -219,6 +222,7 @@ wangle
 watchman
 webp
 wget
+wxwidgets
 x264
 x265
 xorgproto

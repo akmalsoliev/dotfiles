@@ -23,12 +23,7 @@ backup_config: #Back up specified files in .config
 		done
 
 backup_brew: # Backup all brew applications
-	if [ -f brew_programs_list.txt ]; then \
-		rm brew_programs_list.txt; \
-		fi
-	touch brew_programs_list.txt 
-	brew list --formula >> brew_programs_list.txt
-	brew list --cask >> brew_programs_list.txt
+	brew bundle dump --force
 
 restore: # Full restore
 	$(MAKE) restore_config
@@ -46,4 +41,4 @@ restore_config: # Restore all /.config files
 		done
 
 restore_brew: # Restore all brew installs
-	xargs brew install < brew_programs_list.txt
+	brew bundle install

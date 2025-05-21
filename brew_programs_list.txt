@@ -15,10 +15,12 @@ ca-certificates
 cairo
 capstone
 certifi
+cffi
 cfn-lint
 cjson
 cmake
 cmatrix
+cryptography
 dav1d
 direnv
 double-conversion
@@ -64,6 +66,7 @@ graphite2
 graphviz
 gts
 harfbuzz
+hatch
 hdf5
 highway
 htop
@@ -179,6 +182,7 @@ pixman
 pkgconf
 portaudio
 protobuf
+pycparser
 python-packaging
 python@3.12
 python@3.13

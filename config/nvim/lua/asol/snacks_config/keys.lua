@@ -40,16 +40,16 @@ return {
   {
     "<leader><space>",
     function()
-      Snacks.picker.smart()
+      Snacks.picker.buffers()
     end,
-    desc = "Smart Find Files",
+    desc = "Buffers",
   },
   {
     "<leader>,",
     function()
-      Snacks.picker.buffers()
+      Snacks.picker.smart()
     end,
-    desc = "Buffers",
+    desc = "Smart Find Files",
   },
   {
     "<leader>/",
@@ -81,13 +81,6 @@ return {
   },
   -- find
   {
-    "<leader>fb",
-    function()
-      Snacks.picker.buffers()
-    end,
-    desc = "Buffers",
-  },
-  {
     "<leader>fc",
     function()
       Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
@@ -97,7 +90,7 @@ return {
   {
     "<leader>ff",
     function()
-      Snacks.picker.files()
+      Snacks.picker.files({ hidden = true })
     end,
     desc = "Find Files",
   },

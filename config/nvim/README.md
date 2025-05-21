@@ -4,7 +4,10 @@ This repository contains my personal Neovim configuration, tailored to my
 preferences and workflow. Below is a brief overview of key features and how to
 set it up.
 
-This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kickstart.nvim.git)
+This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kickstart.nvim.git), 
+however, since its inception has been heavily modified and fits the current Neovim 0.11+.
+
+**NOTE:** This config requires Neovim 0.11+
 
 ## Features
 
@@ -20,7 +23,6 @@ This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kic
   - lualine: a responsive statusline written in Lua with a variety of configurations
   - mason: easily install and manage LSP servers, linters, and formatters
   - mini: a minimal and fast collection of Lua modules for Neovim
-  - minuet: AI code completion using local Ollama models
   - nvim-scrollbar: a customizable scrollbar plugin for Neovim
   - nvim-treesitter: a better syntax highlighting and code parsing using Tree-sitter
   - oil: an improved file explorer as a buffer in Neovim
@@ -35,10 +37,6 @@ This config is heavily influenced by [kickstart](https://github.com/nvim-lua/kic
 
 ## Setup
 The configuration uses [lazy.nvim](https://github.com/folke/lazy.nvim) for plugin management.
-
-For AI completion features, this setup uses:
-- minuet-ai.nvim connected to Ollama for local AI code completion
-- blink.cmp for modern code completion with fuzzy matching
 
 ## Performance
 The configuration optimizes Neovim's startup time by:

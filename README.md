@@ -1,93 +1,99 @@
-# Dotfiles README
+# Dotfiles
 
-Welcome to my personalized dotfiles repository. It contains your configurations for `Neovim`, `tmux`, `ghostty` and `fish`, as well as a list of `brew` applications I use.
+Welcome to my personalized dotfiles repository. It contains configurations for
+`Neovim`, `tmux`, `fish`, and `stylua`, as well as a Brewfile for managing
+applications.
 
 ## Structure
 
-Here is the basic structure of the repository:
+Here is the structure of the repository:
 
 ```plaintext
 .
+├── Brewfile
 ├── Makefile
 ├── README.md
-├── brew_programs_list.txt
 └── config
     ├── fish
-    ├── ghostty
     ├── nvim
     ├── stylua
-    ├── tmux
-    └── zsh
+    └── tmux
 ```
 
-## How to 
+For Neovim README.md, check: ./config/nvim/README.md
 
-Use This repository leverages a Makefile for various backup and setup
-tasks. Below are the commands you can use:
+## How to Use
 
-### Backup 
+This repository leverages a Makefile for various backup and setup tasks:
 
-1. Backup 
+### Backup
 
-`make backup`
+1. Full Backup
 
-This command is a high-level target that invokes three other
-backup targets: `backup_config` and `backup_brew`. It's utilized for
-performing a full backup operation with just a single command.
+    ```bash
+    make backup
+    ```
 
-2. Backup Config 
+    Performs a complete backup by running both `backup_config` and `backup_brew`.
 
-`make backup_config`
+2. Backup Config
 
-This command backs up the specified configuration directories.
+    ```bash
+    make backup_config
+    ```
 
-3. Backup Brew 
+    Backs up the specified configuration directories.
 
-`make backup_brew`
+3. Backup Brew
 
-This command backs up the list of installed brew applications.
+    ```bash
+    make backup_brew
+    ```
 
-### Restore 
+    Creates/updates a Brewfile of installed applications using `brew bundle dump`.
 
-1. Restore 
+### Restore
 
-`make restore`
+1. Full Restore
 
-This command is a high-level target that invokes two other restore targets:
-`restore_config` and `restore_brew`. It's utilized for performing a full restore
-operation with just a single command.
+    ```bash
+    make restore
+    ```
 
-2. Restore Config 
+    Performs a complete restore by running both `restore_config` and `restore_brew`.
 
-`make restore_config`
+2. Restore Config
 
-This command restores the configuration directories from the
-backup.
+    ```bash
+    make restore_config
+    ```
 
-3. Restore Brew 
+    Restores the configuration directories from the backup.
 
-`make restore_brew`
+3. Restore Brew
 
-This command restores the brew applications from the backup list.
+    ```bash
+    make restore_brew
+    ```
+
+    Installs applications from the Brewfile using `brew bundle install`.
 
 ## Prerequisites
 
-- **Homebrew**: Used for managing software packages on macOS. Ensure you have
-Homebrew installed for the brew commands to work.
+- **Homebrew**: Required for managing software packages on macOS. Make sure
+it's installed for the brew commands to work.
+- **Git**: Required for version control and plugin management.
+- **Terminal with Nerd Font support**: Recommended for proper icon display in Neovim.
 
-## Note
+## Recent Changes
 
-- It is important to periodically update the backup files in this repository to
-keep your configurations and brew packages list up to date.  
-- Ensure you review
-the `brew_programs_list.txt` file and the configurations in the `config`
-directory before using the setup commands, especially when setting up a new
-machine.  
-- Any custom changes or additional configurations you wish to backup
-should be manually added to the appropriate directories or files.
+- Moved to `brew bundle dump` for better Homebrew package management
+- Updated Neovim configuration with new key mappings and plugin settings
+- Added `snacks.nvim` with dashboard functionality for Neovim
+- Added DAP (Debug Adapter Protocol) support for Python and Lua
+- Improved LSP configurations, particularly for Python development
 
 ## Contributing
 
-Feel free to fork this repository and adapt the make commands and configurations
-to suit your personal setup needs. Contributions and improvements to the script
-are welcome.
+Feel free to fork this repository and adapt the commands and configurations to
+suit your personal setup needs. Contributions and improvements are welcome.

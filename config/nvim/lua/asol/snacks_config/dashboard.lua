@@ -19,10 +19,10 @@ return {
         icon = "󰊳 ",
         desc = "Update",
         action = function()
-          print("Updating")
           vim.cmd("Lazy update")
           vim.cmd("MasonToolsUpdate")
           vim.fn.system("uv tool upgrade --all")
+          print("Updating")
         end,
       },
       { icon = " ", key = "q", desc = "Quit", action = ":qa" },

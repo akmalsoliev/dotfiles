@@ -10,9 +10,6 @@
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
--- Make line numbers default
-vim.opt.number = true
-
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
@@ -91,3 +88,6 @@ vim.opt.autoread = true
 -- file on buffer read.
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
+
+-- Make line numbers default
+vim.opt.nu = true

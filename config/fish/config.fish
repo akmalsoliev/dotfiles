@@ -63,3 +63,7 @@ end
 set -gx PATH $PATH /Users/akmalsoliev/.cache/lm-studio/bin
 # End of LM Studio CLI section
 
+fish_add_path /Users/akmalsoliev/.local/bin
+
+# dbt aliases
+alias dbtf=/Users/akmalsoliev/.local/bin/dbt

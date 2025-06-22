@@ -13,6 +13,7 @@ if status is-interactive
   fish_add_path /Users/$USER/.local/bin
   fish_add_path /Users/$USER/.cache/lm-studio/bin
   fish_add_path /opt/homebrew/sbin
+  fish_add_path $(go env GOPATH)/bin
 
   # pure prompt
   set --universal pure_show_system_time true

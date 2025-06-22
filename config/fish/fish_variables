@@ -52,7 +52,7 @@ SETUVAR fish_pager_color_selected_background:\x1d
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/opt/homebrew/sbin\x1e/Users/akmalsoliev/\x2elocal/bin\x1e/Users/akmalsoliev/\x2ecache/lm\x2dstudio/bin\x1e/Users/akmalsoliev/\x2ecargo/bin\x1e/Users/akmalsoliev/\x2epyenv/bin\x1e/opt/homebrew/bin\x1e/Users/akmalsoliev/\x2erye/shims
+SETUVAR fish_user_paths:/Users/akmalsoliev/go/bin\x1e/opt/homebrew/sbin\x1e/Users/akmalsoliev/\x2elocal/bin\x1e/Users/akmalsoliev/\x2ecache/lm\x2dstudio/bin\x1e/Users/akmalsoliev/\x2ecargo/bin\x1e/Users/akmalsoliev/\x2epyenv/bin\x1e/opt/homebrew/bin\x1e/Users/akmalsoliev/\x2erye/shims
 SETUVAR pure_begin_prompt_with_current_directory:true
 SETUVAR pure_check_for_new_release:false
 SETUVAR pure_color_at_sign:pure_color_mute

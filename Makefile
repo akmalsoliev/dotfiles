@@ -1,5 +1,6 @@
 SHELL := /bin/bash
-CONFIG_DIRS := nvim stylua fish tmux ghostty
+BACKUP_CONFIG_DIRS := stylua fish tmux ghostty
+RESTORE_CONFIG_DIRS := nvim stylua fish tmux ghostty
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \
@@ -11,7 +12,7 @@ backup: # Full Backup
 	$(MAKE) backup_brew
 
 backup_config: #Back up specified files in .config
-	@for dir in $(CONFIG_DIRS); do \
+	@for dir in $(BACKUP_CONFIG_DIRS); do \
 		if [ -d "$(HOME)/.config/$$dir" ]; then \
 		echo "Backing up $$dir..."; \
 		rm -rf "config/$$dir/" && \
@@ -30,7 +31,7 @@ restore: # Full restore
 	$(MAKE) restore_brew
 
 restore_config: # Restore all /.config files
-	@for dir in $(CONFIG_DIRS); do \
+	@for dir in $(RESTORE_CONFIG_DIRS); do \
 		if [ -d "config/$$dir" ]; then \
 		echo "Restoring $$dir..."; \
 		cp -rf "config/$$dir/" "$(HOME)/.config/$$dir/" && \

@@ -27,7 +27,7 @@ if status is-interactive
   alias l1='lsd -1'
 
   # cli aliases
-  alias clr='clear'
+  alias cls='clear'
 
   # Neovim aliase
   alias vim='nvim'
@@ -35,6 +35,9 @@ if status is-interactive
 
   # glow default theme
   alias glow="glow -s /Users/akmalsoliev/Library/Preferences/glow/nord.json"
+
+  alias tf="terraform"
+  alias pd="podman"
 
   set -g theme_powerline_fonts no
   set -g theme_nerd_fonts yes

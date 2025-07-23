@@ -5,5 +5,4 @@ formatter:
   indentless_arrays: true
   retain_line_breaks: true
   retain_line_breaks_single: true
-  trim_trailing_whitespace: false
   trim_trailing_whitespace: true

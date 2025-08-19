@@ -65,8 +65,6 @@ brew "protobuf"
 brew "qemu"
 brew "rabbitmq", restart_service: :changed
 brew "ripgrep"
-brew "rust"
-brew "rustup"
 brew "sniffnet"
 brew "sox"
 brew "starship"

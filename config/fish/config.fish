@@ -37,12 +37,17 @@ if status is-interactive
   alias glow="glow -s /Users/akmalsoliev/Library/Preferences/glow/nord.json"
 
   alias tf="terraform"
-  alias pd="podman"
+  alias d="docker"
+  alias dco="docker compose"
 
   set -g theme_powerline_fonts no
   set -g theme_nerd_fonts yes
 
-  set -gx PROJECT_PATHS ~/Workspace/ ~/Workspace/Engie/ ~/.config/
+  set -gx PROJECT_PATHS \
+    ~/Workspace/ \
+    ~/Workspace/Engie/ \
+    ~/.config/ \
+    ~/Obsidian/
 
   # direnv
   direnv hook fish | source
@@ -66,3 +71,7 @@ end
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH /Users/akmalsoliev/.cache/lm-studio/bin
 # End of LM Studio CLI section
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

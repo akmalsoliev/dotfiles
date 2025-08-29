@@ -15,6 +15,10 @@ if status is-interactive
   fish_add_path /opt/homebrew/sbin
   fish_add_path $(go env GOPATH)/bin
 
+  # Notify for a long process, longer than 10 seconds
+  set -U __done_min_cmd_duration 10000
+  set -U __done_notification_command '$history[1]'
+
   # pure prompt
   set --universal pure_show_system_time true
   set --universal pure_color_system_time pure_color_mute
@@ -66,12 +70,13 @@ if status is-interactive
     exec tmux
   end
 
+  # Added by LM Studio CLI (lms)
+  set -gx PATH $PATH /Users/akmalsoliev/.cache/lm-studio/bin
+  # End of LM Studio CLI section
+
+  # bun
+  set --export BUN_INSTALL "$HOME/.bun"
+  set --export PATH $BUN_INSTALL/bin $PATH
+
 end
 
-# Added by LM Studio CLI (lms)
-set -gx PATH $PATH /Users/akmalsoliev/.cache/lm-studio/bin
-# End of LM Studio CLI section
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH

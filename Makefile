@@ -1,6 +1,6 @@
 SHELL := /bin/bash
-BACKUP_CONFIG_DIRS := stylua fish tmux yamlfmt
-RESTORE_CONFIG_DIRS := nvim stylua fish tmux yamlfmt
+BACKUP_CONFIG_DIRS := stylua fish tmux yamlfmt alacritty
+RESTORE_CONFIG_DIRS := nvim stylua fish tmux yamlfmt alacritty
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \

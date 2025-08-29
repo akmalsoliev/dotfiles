@@ -4,6 +4,7 @@ TERM = "xterm-256color"
 [window]
 startup_mode = "Windowed"
 decorations = "Buttonless"
+option_as_alt = "Both"
 
 [bell]
 color = "#003300"

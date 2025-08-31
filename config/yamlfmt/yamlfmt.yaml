@@ -1,6 +1,7 @@
 formatter:
   type: basic
   array_indent: 2
+  indent: 2
   drop_merge_tag: false
   indentless_arrays: true
   retain_line_breaks: true

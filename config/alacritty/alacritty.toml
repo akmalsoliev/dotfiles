@@ -3,19 +3,19 @@ TERM = "xterm-256color"
 
 [window]
 startup_mode = "Windowed"
-decorations = "Buttonless"
+decorations = "None"
 option_as_alt = "Both"
-
-[bell]
-color = "#003300"
-duration = 1
-command = { program = "terminal-notifier", args = ["-title", "Alacritty", "-message", "Bell"] }
 
 [selection]
 save_to_clipboard = true
 
 [mouse]
 hide_when_typing = true
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Alt"
+action = "ToggleFullscreen"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }

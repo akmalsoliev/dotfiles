@@ -51,7 +51,7 @@ if status is-interactive
     ~/Workspace/ \
     ~/Workspace/Engie/ \
     ~/.config/ \
-    ~/Obsidian/
+    ~/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/
 
   # direnv
   direnv hook fish | source
@@ -79,4 +79,3 @@ if status is-interactive
   set --export PATH $BUN_INSTALL/bin $PATH
 
 end
-

@@ -1,0 +1,6 @@
+overrides:
+  - files: "*.{yml,yaml,md}"
+    options:
+      printWidth: 80
+      proseWrap: always
+      tabWidth: 2

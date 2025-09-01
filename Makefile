@@ -1,6 +1,6 @@
 SHELL := /bin/bash
-BACKUP_CONFIG_DIRS := stylua fish tmux yamlfmt alacritty
-RESTORE_CONFIG_DIRS := nvim stylua fish tmux yamlfmt alacritty
+BACKUP_CONFIG_DIRS := stylua fish tmux prettier alacritty
+RESTORE_CONFIG_DIRS := nvim stylua fish tmux prettier alacritty
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \
@@ -10,6 +10,7 @@ help: # Print help on Makefile
 backup: # Full Backup
 	$(MAKE) backup_config
 	$(MAKE) backup_brew
+	$(MAKE) backup_bun
 
 backup_config: #Back up specified files in .config
 	@for dir in $(BACKUP_CONFIG_DIRS); do \
@@ -25,6 +26,10 @@ backup_config: #Back up specified files in .config
 
 backup_brew: # Backup all brew applications
 	brew bundle dump --force
+
+backup_bun: # Backup all globally installed Bun applications
+	NO_COLOR=1 bun pm ls -g | tail -n +2 | \
+	sed 's/^[^a-zA-Z@]*//' >> bun_global_applications.txt
 
 restore: # Full restore
 	$(MAKE) restore_config
@@ -43,3 +48,6 @@ restore_config: # Restore all /.config files
 
 restore_brew: # Restore all brew installs
 	brew bundle install
+
+restore_bun: # Reinstall all Bun global applications
+	cat bun_global_applications.txt | XARGS bun add -g

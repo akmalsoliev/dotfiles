@@ -29,7 +29,7 @@ backup_brew: # Backup all brew applications
 
 backup_bun: # Backup all globally installed Bun applications
 	NO_COLOR=1 bun pm ls -g | tail -n +2 | \
-	sed 's/^[^a-zA-Z@]*//' >> bun_global_applications.txt
+	sed 's/^[^a-zA-Z@]*//' > bun_global_applications.txt
 
 restore: # Full restore
 	$(MAKE) restore_config

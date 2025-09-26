@@ -50,8 +50,7 @@ if status is-interactive
   set -gx PROJECT_PATHS \
     ~/Workspace/ \
     ~/Workspace/Engie/ \
-    ~/.config/ \
-    ~/Library/Mobile Documents/com~apple~CloudDocs/Obsidian/
+    ~/.config/
 
   # direnv
   direnv hook fish | source

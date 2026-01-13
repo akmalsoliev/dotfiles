@@ -4,4 +4,4 @@ tabWidth: 2
 overrides:
   - files: ["*.{yml,yaml,md}"]
     options:
-      proseWrap: always
+      proseWrap: preserve

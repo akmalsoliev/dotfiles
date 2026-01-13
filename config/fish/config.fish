@@ -17,7 +17,6 @@ if status is-interactive
 
   # Notify for a long process, longer than 10 seconds
   set -U __done_min_cmd_duration 10000
-  set -U __done_notification_command '$history[1]'
 
   # pure prompt
   set --universal pure_show_system_time true
@@ -43,6 +42,10 @@ if status is-interactive
   alias tf="terraform"
   alias d="docker"
   alias dco="docker compose"
+
+  # Additional git commands
+  # Pretty git log with author, date, commit hash
+  alias glop="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 
   set -g theme_powerline_fonts no
   set -g theme_nerd_fonts yes

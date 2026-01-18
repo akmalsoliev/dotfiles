@@ -17,6 +17,9 @@ if status is-interactive
 
   # Notify for a long process, longer than 10 seconds
   set -U __done_min_cmd_duration 10000
+  set -l title "Done in $humanized_duration — $argv[1]"
+  set -l wd (string replace --regex "^$HOME" "~" (pwd))
+  set -l message "$wd — $argv[1]"
 
   # pure prompt
   set --universal pure_show_system_time true
@@ -81,3 +84,9 @@ if status is-interactive
   set --export PATH $BUN_INSTALL/bin $PATH
 
 end
+# Added by dbt Fusion extension (ensure dbt binary dir on PATH)
+if not contains "/Users/akmalsoliev/.local/bin" $PATH
+  set -gx PATH "/Users/akmalsoliev/.local/bin" $PATH
+end
+# Added by dbt Fusion extension
+alias dbtf "/Users/akmalsoliev/.local/bin/dbt"

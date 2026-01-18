@@ -1,7 +1,7 @@
-brgmnn/fish-docker-compose
-franciscolourenco/done
-gazorby/fifc
-jhillyerd/plugin-git
 jorgebucaran/fisher
 patrickf1/fzf.fish
+jhillyerd/plugin-git
 pure-fish/pure
+brgmnn/fish-docker-compose
+gazorby/fifc
+franciscolourenco/done

@@ -84,9 +84,3 @@ if status is-interactive
   set --export PATH $BUN_INSTALL/bin $PATH
 
 end
-# Added by dbt Fusion extension (ensure dbt binary dir on PATH)
-if not contains "/Users/akmalsoliev/.local/bin" $PATH
-  set -gx PATH "/Users/akmalsoliev/.local/bin" $PATH
-end
-# Added by dbt Fusion extension
-alias dbtf "/Users/akmalsoliev/.local/bin/dbt"

@@ -1,0 +1,41 @@
+# MFD: Military Flight Display theme for Fish
+# Monotone olive/sage colorscheme
+
+fish_color_normal 1E2D1E
+fish_color_command 0D1D0D --bold
+fish_color_keyword 0D1D0D --bold
+fish_color_quote 1E2D1E --italics
+fish_color_redirection 1E2D1E
+fish_color_end 1E2D1E
+fish_color_error 1E2D1E --bold --underline
+fish_color_param 1E2D1E
+fish_color_option 1E2D1E --italics
+fish_color_comment 5A6B49 --italics
+fish_color_selection --background=6A7B59
+fish_color_search_match --background=6A7B59 --bold
+fish_color_operator 1E2D1E
+fish_color_escape 0D1D0D --bold
+fish_color_autosuggestion 5A6B49
+fish_color_cwd 1E2D1E --bold
+fish_color_cwd_root 0D1D0D --bold
+fish_color_user 1E2D1E
+fish_color_host 1E2D1E
+fish_color_host_remote 1E2D1E --italics
+fish_color_cancel 1E2D1E --reverse
+fish_color_valid_path --underline
+fish_color_history_current --bold
+
+# Pager colors (tab completion menu)
+fish_pager_color_progress 5A6B49
+fish_pager_color_background --background=5A6B4A
+fish_pager_color_prefix 0D1D0D --bold --underline
+fish_pager_color_completion 1E2D1E
+fish_pager_color_description 5A6B49 --italics
+fish_pager_color_selected_background --background=6A7B59
+fish_pager_color_selected_prefix 0D1D0D --bold
+fish_pager_color_selected_completion 1E2D1E --bold
+fish_pager_color_selected_description 5A6B49
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix 0D1D0D --bold --underline
+fish_pager_color_secondary_completion 1E2D1E
+fish_pager_color_secondary_description 5A6B49 --italics

@@ -50,6 +50,15 @@ if status is-interactive
   # Pretty git log with author, date, commit hash
   alias glop="git log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short"
 
+  # Rust Cargo
+  alias c="cargo"
+  alias cr="cargo run"
+
+  # Claude use local LLM
+  function claude_local
+    env ANTHROPIC_BASE_URL=http://localhost:1234 ANTHROPIC_API_KEY=sk-fake claude $argv
+  end
+
   set -g theme_powerline_fonts no
   set -g theme_nerd_fonts yes
 

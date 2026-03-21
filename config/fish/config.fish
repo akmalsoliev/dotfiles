@@ -93,3 +93,7 @@ if status is-interactive
   set --export PATH $BUN_INSTALL/bin $PATH
 
 end
+fish_add_path /Users/akmalsoliev/.local/bin
+
+# dbt aliases
+alias dbtf=/Users/akmalsoliev/.local/bin/dbt

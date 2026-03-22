@@ -1,6 +1,6 @@
 SHELL := /bin/bash
-BACKUP_CONFIG_DIRS := stylua fish tmux prettier alacritty
-RESTORE_CONFIG_DIRS := nvim stylua fish tmux prettier alacritty
+BACKUP_CONFIG_DIRS := stylua fish tmux prettier alacritty hammerspoon
+RESTORE_CONFIG_DIRS := nvim stylua fish tmux prettier alacritty hammerspoon
 
 help: # Print help on Makefile
 	@grep '^[^.#]\+:\s\+.*#' Makefile | \
@@ -48,6 +48,7 @@ restore_config: # Restore all /.config files
 
 restore_brew: # Restore all brew installs
 	brew bundle install
+	defaults write org.hammerspoon.Hammerspoon MJConfigFile "$HOME/.config/hammerspoon/init.lua"
 
 restore_bun: # Reinstall all Bun global applications
 	cat bun_global_applications.txt | XARGS bun add -g

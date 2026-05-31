@@ -1,4 +1,7 @@
 if status is-interactive
+  # colorscheme
+  set --universal ayu_variant dark && ayu_load_theme
+
   # Activate virtual env and save the path as a tmux variable,
   # so that new panes/windows can re-activate as necessary
   if test -d .venv

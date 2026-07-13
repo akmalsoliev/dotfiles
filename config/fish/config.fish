@@ -91,11 +91,16 @@ if status is-interactive
   set -gx PATH $PATH /Users/akmalsoliev/.cache/lm-studio/bin
   # End of LM Studio CLI section
 
-  # bun
-  set --export BUN_INSTALL "$HOME/.bun"
-  set --export PATH $BUN_INSTALL/bin $PATH
-
 end
+
+# Environment + PATH must be set for ALL sessions (incl. non-interactive,
+# e.g. GUI-launched Neovim), not just interactive ones.
+set -gx XDG_CONFIG_HOME $HOME/.config
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
 fish_add_path /Users/akmalsoliev/.local/bin
 
 # dbt aliases

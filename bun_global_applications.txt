@@ -1,2 +1,2 @@
-prettier@3.8.1
-typescript@5.9.3
+@openai/codex@0.144.1
+prettier@3.9.4

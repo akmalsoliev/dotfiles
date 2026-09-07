@@ -1,2 +1,2 @@
-@openai/codex@0.144.1
-prettier@3.9.4
+mermaid-filter@1.4.7
+prettier@3.9.6

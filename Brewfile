@@ -59,6 +59,8 @@ brew "git"
 brew "git-cliff"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# List, fetch and generate .gitignore templates
+brew "git-ignore"
 # Git extension for versioning large files
 brew "git-lfs"
 # Render markdown on the CLI
@@ -179,10 +181,14 @@ brew "tmux"
 brew "tree"
 # Parser generator tool
 brew "tree-sitter-cli"
+# Language servers for HTML, CSS, JavaScript, and JSON extracted from vscode
+brew "vscode-langservers-extracted"
 # Watch files and take action when they change
 brew "watchman"
 # Internet file retriever
 brew "wget"
+# Language Server for Yaml Files
+brew "yaml-language-server"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # In terminal graphical metrics for your *nix system
@@ -206,8 +212,6 @@ cask "discord"
 cask "font-terminess-ttf-nerd-font"
 # Cross-platform Git credential storage for multiple hosting providers
 cask "git-credential-manager"
-# Code editor focused on stability, without AI, subscriptions, or telemetry
-cask "gram"
 # Desktop automation application
 cask "hammerspoon"
 # Customise mouse behavior
@@ -220,8 +224,6 @@ cask "openlogi"
 cask "orbstack"
 # Peer to peer Bitorrent client
 cask "qbittorrent"
-# Keyboard-driven, vim-like browser based on PyQt5
-cask "qutebrowser"
 # Music streaming service
 cask "spotify"
 vscode "adamviola.parquet-explorer"
@@ -275,17 +277,23 @@ vscode "vstirbu.vscode-mermaid-preview"
 vscode "yinfei.luahelper"
 go "golang.org/x/tools/gopls"
 go "github.com/google/yamlfmt/cmd/yamlfmt"
+cargo "bacon"
 cargo "cargo-audit"
+cargo "cargo-cache"
+cargo "cargo-expand"
 cargo "cargo-leptos"
+cargo "cargo-nextest"
 cargo "cargo-update"
 cargo "cargo-vet"
 cargo "dioxus-cli"
 cargo "envex"
 cargo "evcxr_jupyter"
+cargo "health_check_notification"
 cargo "trunk"
+cargo "ui-cli"
 uv "basedpyright"
 uv "cfn-lint"
-uv "dbt-ls"
+uv "dbt-ls[aws]"
 uv "git-filter-repo"
 uv "graphifyy"
 uv "ministack"
